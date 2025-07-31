@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Phrase Generator - Practice Daily Korean Expressions | K-Style Learning</title>
+    <meta name="description" content="Generate random Korean phrases with romanization and English translations. Perfect for daily Korean practice and expanding your conversational skills.">
+    <meta name="keywords" content="Korean phrase generator, Korean phrases, Korean expressions, Korean practice, daily Korean, Korean conversation">
+    <meta name="author" content="K-Style Learning">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Korean Phrase Generator - Practice Daily Korean Expressions">
+    <meta property="og:description" content="Generate random Korean phrases for daily practice and conversation skills">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kstyle.site/pages/phrase-generator.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎵%3C/text%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Korean Phrase Generator",
+        "description": "Interactive Korean phrase generator for language learning practice",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="../index.html">
+                        <span class="brand-icon">🎵</span>
+                        <span class="brand-text">K-Style Learning</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Lessons <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="basics.html">Korean Basics</a></li>
+                            <li><a href="grammar.html">Grammar Guide</a></li>
+                            <li><a href="vocabulary.html">Vocabulary</a></li>
+                            <li><a href="culture.html">Korean Culture</a></li>
+                            <li><a href="pronunciation.html">Pronunciation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="phrase-generator.html" class="nav-link active">Phrases</a></li>
+                    <li><a href="lyrics.html" class="nav-link">K-pop Lyrics</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Page Header -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Korean Phrase Generator</h1>
+                    <p>Practice Korean with random phrases, expressions, and conversational patterns</p>
+                    <div class="page-breadcrumb">
+                        <a href="../index.html">Home</a> > <span>Phrase Generator</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phrase Generator Section -->
+        <section class="lesson-section">
+            <div class="container">
+                <div class="phrase-generator-container">
+                    <div class="generator-controls">
+                        <h2>Generate Korean Phrases</h2>
+                        <p>Click the button below to get a random Korean phrase with pronunciation and meaning.</p>
+                        
+                        <div class="control-options">
+                            <div class="option-group">
+                                <label for="category-select">Category:</label>
+                                <select id="category-select" class="control-select">
+                                    <option value="all">All Categories</option>
+                                    <option value="greetings">Greetings</option>
+                                    <option value="politeness">Politeness</option>
+                                    <option value="emotions">Emotions</option>
+                                    <option value="encouragement">Encouragement</option>
+                                    <option value="daily">Daily Life</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label for="auto-refresh">
+                                    <input type="checkbox" id="auto-refresh"> Auto-refresh every 10 seconds
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="generate-phrase-btn" class="btn btn-primary btn-large">
+                            Generate New Phrase
+                        </button>
+                    </div>
+
+                    <div class="phrase-display-area">
+                        <div id="current-phrase-display" class="current-phrase">
+                            <div class="phrase-loading">Click "Generate New Phrase" to start!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phrase History Section -->
+        <section class="lesson-section phrase-history">
+            <div class="container">
+                <h2 class="section-title">Recent Phrases</h2>
+                <div id="phrase-history-container" class="phrase-history-grid">
+                    <div class="no-history">
+                        <p>No phrases generated yet. Start practicing to see your phrase history!</p>
+                    </div>
+                </div>
+                <div class="history-controls">
+                    <button id="clear-history-btn" class="btn btn-outline">Clear History</button>
+                    <button id="export-phrases-btn" class="btn btn-secondary">Export Phrases</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Features Section -->
+        <section class="lesson-section practice-features">
+            <div class="container">
+                <h2 class="section-title">Practice Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Random Generation</h3>
+                        <p>Get random Korean phrases from different categories to expand your conversational vocabulary.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Multiple Categories</h3>
+                        <p>Choose from greetings, emotions, daily expressions, and more to focus on specific topics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔊</div>
+                        <h3>Pronunciation Guide</h3>
+                        <p>Each phrase includes romanization to help you pronounce Korean words correctly.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Usage Tips</h3>
+                        <p>Learn when and how to use each phrase with practical usage examples and context.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Practice anywhere with our responsive design that works perfectly on all devices.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Save & Export</h3>
+                        <p>Keep track of phrases you've learned and export them for offline study.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Tips Section -->
+        <section class="lesson-section practice-tips">
+            <div class="container">
+                <h2 class="section-title">How to Practice Effectively</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-number">1</div>
+                        <h3>Daily Practice</h3>
+                        <p>Generate 5-10 phrases daily and practice pronouncing them aloud. Consistency is key to language learning.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">2</div>
+                        <h3>Context Learning</h3>
+                        <p>Don't just memorize phrases - understand when and how to use them in real conversations.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">3</div>
+                        <h3>Spaced Repetition</h3>
+                        <p>Review previously generated phrases regularly to reinforce memory and improve long-term retention.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">4</div>
+                        <h3>Practice Speaking</h3>
+                        <p>Say each phrase out loud multiple times. Speaking practice is essential for building confidence.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">5</div>
+                        <h3>Create Sentences</h3>
+                        <p>Try to create your own sentences using the phrases you've learned to practice application.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">6</div>
+                        <h3>Use in Context</h3>
+                        <p>Look for opportunities to use these phrases in K-pop lyrics, dramas, or conversations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Guide Section -->
+        <section class="lesson-section category-guide">
+            <div class="container">
+                <h2 class="section-title">Phrase Categories</h2>
+                <p class="section-intro">Our phrases are organized into practical categories to help you focus on specific aspects of Korean communication.</p>
+                
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">👋</div>
+                        <h3>Greetings (인사)</h3>
+                        <p>Essential greeting phrases for different times of day and social situations.</p>
+                        <div class="category-examples">
+                            <span>안녕하세요</span>
+                            <span>잘 지내세요</span>
+                            <span>반갑습니다</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-icon">🙏</div>
+                        <h3>Politeness (예의)</h3>
+                        <p>Courteous expressions for showing respect and good manners in Korean society.</p>
+                        <div class="category-examples">
+                            <span>감사합니다</span>
+                            <span>죄송해요</span>
+                            <span>괜찮아요</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-icon">😊</div>
+                        <h3>Emotions (감정)</h3>
+                        <p>Express your feelings and understand others' emotional expressions in Korean.</p>
+                        <div class="category-examples">
+                            <span>행복해요</span>
+                            <span>보고 싶어요</span>
+                            <span>사랑해요</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-icon">💪</div>
+                        <h3>Encouragement (격려)</h3>
+                        <p>Motivational phrases to cheer someone on or encourage yourself and others.</p>
+                        <div class="category-examples">
+                            <span>화이팅!</span>
+                            <span>힘내세요</span>
+                            <span>잘했어요</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-icon">🏠</div>
+                        <h3>Daily Life (일상)</h3>
+                        <p>Common phrases used in everyday situations and routine conversations.</p>
+                        <div class="category-examples">
+                            <span>배고파요</span>
+                            <span>피곤해요</span>
+                            <span>재미있어요</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div class="category-icon">💬</div>
+                        <h3>Communication (의사소통)</h3>
+                        <p>Essential phrases for effective communication and understanding in Korean.</p>
+                        <div class="category-examples">
+                            <span>이해해요</span>
+                            <span>궁금해요</span>
+                            <span>도와주세요</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources Section -->
+        <section class="lesson-section related-resources">
+            <div class="container">
+                <h2 class="section-title">Continue Learning</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>🧠 Test Your Knowledge</h3>
+                        <p>Practice the phrases you've learned with our interactive Korean quiz system.</p>
+                        <a href="quiz.html" class="btn btn-primary">Take Quiz</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>📚 Build Vocabulary</h3>
+                        <p>Expand your word knowledge with our comprehensive vocabulary learning tools.</p>
+                        <a href="vocabulary.html" class="btn btn-secondary">Study Vocabulary</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>🎵 Practice with K-pop</h3>
+                        <p>Find these phrases in K-pop lyrics and learn Korean through music you love.</p>
+                        <a href="lyrics.html" class="btn btn-outline">Explore Lyrics</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>K-Style Learning</h3>
+                    <p>Your gateway to Korean language and K-pop culture. Learn, practice, and immerse yourself in the beautiful Korean language.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn Korean</h4>
+                    <ul>
+                        <li><a href="basics.html">Korean Basics</a></li>
+                        <li><a href="grammar.html">Grammar Guide</a></li>
+                        <li><a href="vocabulary.html">Vocabulary</a></li>
+                        <li><a href="pronunciation.html">Pronunciation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Interactive Tools</h4>
+                    <ul>
+                        <li><a href="quiz.html">Korean Quiz</a></li>
+                        <li><a href="phrase-generator.html">Phrase Generator</a></li>
+                        <li><a href="lyrics.html">K-pop Lyrics</a></li>
+                        <li><a href="culture.html">Korean Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 K-Style Learning. All rights reserved. Made with ❤️ for K-pop fans worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/phrase-generator.js"></script>
+    
+    <!-- Page-specific styles -->
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 80px;
+        }
+        
+        .page-hero-content {
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .page-breadcrumb {
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .page-breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .lesson-section {
+            padding: 60px 0;
+        }
+        
+        .lesson-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .phrase-generator-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .generator-controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .generator-controls h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .control-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .control-select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .option-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .phrase-display-area {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+        }
+        
+        .current-phrase {
+            padding: 3rem;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phrase-loading {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .phrase-history {
+            background: white;
+        }
+        
+        .phrase-history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .no-history {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .history-controls {
+            text-align: center;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .practice-features {
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .practice-tips {
+            background: white;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .tip-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .tip-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .category-guide {
+            background: #f8f9fa;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .category-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .category-examples {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-examples span {
+            background: var(--gradient-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .related-resources {
+            background: var(--light-color);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .control-options {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .current-phrase {
+                padding: 2rem;
+            }
+            
+            .history-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

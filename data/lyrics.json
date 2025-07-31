@@ -1,0 +1,304 @@
+{
+    "songs": [
+        {
+            "id": "dynamite",
+            "title": "Dynamite",
+            "artist": "BTS",
+            "album": "BE",
+            "year": 2020,
+            "difficulty": "beginner",
+            "description": "BTS's first English-language single that topped charts worldwide.",
+            "lyrics": [
+                {
+                    "line": "Cos ah ah I'm in the stars tonight",
+                    "korean": "",
+                    "romanization": "",
+                    "notes": "This line is in English - BTS often mixes English and Korean"
+                },
+                {
+                    "line": "So watch me bring the fire and set the night alight",
+                    "korean": "",
+                    "romanization": "",
+                    "notes": "English line expressing energy and excitement"
+                },
+                {
+                    "line": "Shoes on get up in the morn",
+                    "korean": "",
+                    "romanization": "",
+                    "notes": "English - talking about starting the day with energy"
+                },
+                {
+                    "line": "Cup of milk let's rock and roll",
+                    "korean": "",
+                    "romanization": "",
+                    "notes": "English - simple morning routine with positive attitude"
+                }
+            ],
+            "vocabulary": [
+                {
+                    "word": "stars",
+                    "korean": "별",
+                    "romanization": "byeol",
+                    "meaning": "celestial bodies, also can mean 'celebrity'"
+                },
+                {
+                    "word": "night",
+                    "korean": "밤",
+                    "romanization": "bam",
+                    "meaning": "nighttime, evening"
+                },
+                {
+                    "word": "fire",
+                    "korean": "불",
+                    "romanization": "bul",
+                    "meaning": "fire, passion, energy"
+                },
+                {
+                    "word": "shoes",
+                    "korean": "신발",
+                    "romanization": "sinbal",
+                    "meaning": "footwear"
+                },
+                {
+                    "word": "morning",
+                    "korean": "아침",
+                    "romanization": "achim",
+                    "meaning": "morning time"
+                }
+            ],
+            "culturalNotes": [
+                "This song was BTS's first fully English track, showing their global appeal",
+                "The disco-pop sound pays homage to classic American music",
+                "The song's upbeat message resonated during the COVID-19 pandemic"
+            ]
+        },
+        {
+            "id": "spring-day",
+            "title": "Spring Day",
+            "artist": "BTS",
+            "album": "You Never Walk Alone",
+            "year": 2017,
+            "difficulty": "intermediate",
+            "description": "An emotional ballad about missing someone, with beautiful Korean lyrics.",
+            "lyrics": [
+                {
+                    "line": "보고 싶다",
+                    "korean": "보고 싶다",
+                    "romanization": "bogo sipda",
+                    "notes": "Simple but powerful expression of longing"
+                },
+                {
+                    "line": "이렇게 말하니까 더 보고 싶다",
+                    "korean": "이렇게 말하니까 더 보고 싶다",
+                    "romanization": "ireoke malhanikka deo bogo sipda",
+                    "notes": "Saying it out loud makes the feeling stronger"
+                },
+                {
+                    "line": "너희 사진을 보고 있어도 보고 싶다",
+                    "korean": "너희 사진을 보고 있어도 보고 싶다",
+                    "romanization": "neohui sajineul bogo isseodo bogo sipda",
+                    "notes": "Even looking at photos, still missing them"
+                },
+                {
+                    "line": "하루도 너 없이는 의미가 없어",
+                    "korean": "하루도 너 없이는 의미가 없어",
+                    "romanization": "harudo neo eopsineun uimiga eopseo",
+                    "notes": "Not a single day has meaning without you"
+                }
+            ],
+            "vocabulary": [
+                {
+                    "word": "보고 싶다",
+                    "korean": "보고 싶다",
+                    "romanization": "bogo sipda",
+                    "meaning": "I miss you / I want to see you"
+                },
+                {
+                    "word": "말하다",
+                    "korean": "말하다",
+                    "romanization": "malhada",
+                    "meaning": "to speak, to say"
+                },
+                {
+                    "word": "사진",
+                    "korean": "사진",
+                    "romanization": "sajin",
+                    "meaning": "photograph, picture"
+                },
+                {
+                    "word": "하루",
+                    "korean": "하루",
+                    "romanization": "haru",
+                    "meaning": "one day"
+                },
+                {
+                    "word": "의미",
+                    "korean": "의미",
+                    "romanization": "uimi",
+                    "meaning": "meaning, significance"
+                }
+            ],
+            "culturalNotes": [
+                "This song is often interpreted as being about the Sewol Ferry tragedy",
+                "The metaphor of seasons represents the cycle of emotions",
+                "Korean ballads often use nature imagery to express feelings"
+            ]
+        },
+        {
+            "id": "gangnam-style",
+            "title": "강남스타일",
+            "artist": "싸이 (PSY)",
+            "album": "Psy 6 (Six Rules), Part 1",
+            "year": 2012,
+            "difficulty": "intermediate",
+            "description": "The viral hit that introduced K-pop to the world, satirizing Gangnam district culture.",
+            "lyrics": [
+                {
+                    "line": "강남스타일",
+                    "korean": "강남스타일",
+                    "romanization": "gangnam style",
+                    "notes": "Gangnam is an affluent district in Seoul"
+                },
+                {
+                    "line": "낮에는 따사로운 인간적인 여자",
+                    "korean": "낮에는 따사로운 인간적인 여자",
+                    "romanization": "najeneun ttasaroun inganjeoin yeoja",
+                    "notes": "During the day, a warm and humanistic woman"
+                },
+                {
+                    "line": "커피 한잔의 여유를 아는 품격 있는 여자",
+                    "korean": "커피 한잔의 여유를 아는 품격 있는 여자",
+                    "romanization": "keopi hanjane yeoyureul aneun pumgyeok itneun yeoja",
+                    "notes": "A woman who knows the leisure of a cup of coffee"
+                },
+                {
+                    "line": "밤이 오면 심장이 뜨거워지는 여자",
+                    "korean": "밤이 오면 심장이 뜨거워지는 여자",
+                    "romanization": "bami omyeon simjangi tteugeowojineun yeoja",
+                    "notes": "When night comes, a woman whose heart becomes hot"
+                }
+            ],
+            "vocabulary": [
+                {
+                    "word": "강남",
+                    "korean": "강남",
+                    "romanization": "gangnam",
+                    "meaning": "Gangnam district in Seoul (literally 'south of the river')"
+                },
+                {
+                    "word": "낮",
+                    "korean": "낮",
+                    "romanization": "nat",
+                    "meaning": "daytime, day"
+                },
+                {
+                    "word": "여자",
+                    "korean": "여자",
+                    "romanization": "yeoja",
+                    "meaning": "woman, female"
+                },
+                {
+                    "word": "커피",
+                    "korean": "커피",
+                    "romanization": "keopi",
+                    "meaning": "coffee"
+                },
+                {
+                    "word": "밤",
+                    "korean": "밤",
+                    "romanization": "bam",
+                    "meaning": "night, evening"
+                },
+                {
+                    "word": "심장",
+                    "korean": "심장",
+                    "romanization": "simjang",
+                    "meaning": "heart (organ)"
+                }
+            ],
+            "culturalNotes": [
+                "Gangnam is known as Seoul's Beverly Hills - wealthy and trendy",
+                "The song satirizes the materialistic culture of the area",
+                "PSY's humor comes from contrasting ordinary appearance with 'Gangnam style'"
+            ]
+        },
+        {
+            "id": "love-scenario",
+            "title": "사랑을 했다",
+            "artist": "iKON",
+            "album": "Return",
+            "year": 2018,
+            "difficulty": "beginner",
+            "description": "A sweet song about young love with simple, relatable Korean lyrics.",
+            "lyrics": [
+                {
+                    "line": "사랑을 했다 우리가 만나서",
+                    "korean": "사랑을 했다 우리가 만나서",
+                    "romanization": "sarangeul haetda uriga mannaseo",
+                    "notes": "We loved each other since we met"
+                },
+                {
+                    "line": "사랑을 했다 우리가 알아서",
+                    "korean": "사랑을 했다 우리가 알아서",
+                    "romanization": "sarangeul haetda uriga araseo",
+                    "notes": "We loved each other since we knew each other"
+                },
+                {
+                    "line": "사랑을 했다 서로가 힘들어서",
+                    "korean": "사랑을 했다 서로가 힘들어서",
+                    "romanization": "sarangeul haetda seoroga himdeureoseo",
+                    "notes": "We loved each other through difficult times"
+                },
+                {
+                    "line": "사랑을 했다 그게 다야",
+                    "korean": "사랑을 했다 그게 다야",
+                    "romanization": "sarangeul haetda geuge daya",
+                    "notes": "We loved each other, that's all"
+                }
+            ],
+            "vocabulary": [
+                {
+                    "word": "사랑",
+                    "korean": "사랑",
+                    "romanization": "sarang",
+                    "meaning": "love"
+                },
+                {
+                    "word": "하다",
+                    "korean": "하다",
+                    "romanization": "hada",
+                    "meaning": "to do"
+                },
+                {
+                    "word": "우리",
+                    "korean": "우리",
+                    "romanization": "uri",
+                    "meaning": "we, us, our"
+                },
+                {
+                    "word": "만나다",
+                    "korean": "만나다",
+                    "romanization": "mannada",
+                    "meaning": "to meet"
+                },
+                {
+                    "word": "알다",
+                    "korean": "알다",
+                    "romanization": "alda",
+                    "meaning": "to know"
+                },
+                {
+                    "word": "서로",
+                    "korean": "서로",
+                    "romanization": "seoro",
+                    "meaning": "each other, mutually"
+                }
+            ],
+            "culturalNotes": [
+                "This song became very popular among young Koreans",
+                "The simple repetitive structure makes it easy to sing along",
+                "It expresses pure, innocent love that many can relate to"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,394 @@
+{
+    "categories": [
+        {
+            "name": "Basic Greetings",
+            "id": "greetings",
+            "words": [
+                {
+                    "korean": "안녕하세요",
+                    "romanization": "annyeonghaseyo",
+                    "english": "hello (formal)",
+                    "partOfSpeech": "interjection",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "안녕",
+                    "romanization": "annyeong",
+                    "english": "hello/bye (casual)",
+                    "partOfSpeech": "interjection",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "안녕히 가세요",
+                    "romanization": "annyeonghi gaseyo",
+                    "english": "goodbye (to someone leaving)",
+                    "partOfSpeech": "phrase",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "안녕히 계세요",
+                    "romanization": "annyeonghi gyeseyo",
+                    "english": "goodbye (when you're leaving)",
+                    "partOfSpeech": "phrase",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Family Members",
+            "id": "family",
+            "words": [
+                {
+                    "korean": "가족",
+                    "romanization": "gajok",
+                    "english": "family",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "어머니",
+                    "romanization": "eomeoni",
+                    "english": "mother (formal)",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "아버지",
+                    "romanization": "abeoji",
+                    "english": "father (formal)",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "엄마",
+                    "romanization": "eomma",
+                    "english": "mom",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "아빠",
+                    "romanization": "appa",
+                    "english": "dad",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "형",
+                    "romanization": "hyeong",
+                    "english": "older brother (male speaker)",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "오빠",
+                    "romanization": "oppa",
+                    "english": "older brother (female speaker)",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Numbers",
+            "id": "numbers",
+            "words": [
+                {
+                    "korean": "하나",
+                    "romanization": "hana",
+                    "english": "one",
+                    "partOfSpeech": "number",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "둘",
+                    "romanization": "dul",
+                    "english": "two",
+                    "partOfSpeech": "number",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "셋",
+                    "romanization": "set",
+                    "english": "three",
+                    "partOfSpeech": "number",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "넷",
+                    "romanization": "net",
+                    "english": "four",
+                    "partOfSpeech": "number",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "다섯",
+                    "romanization": "daseot",
+                    "english": "five",
+                    "partOfSpeech": "number",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Food & Drinks",
+            "id": "food",
+            "words": [
+                {
+                    "korean": "김치",
+                    "romanization": "gimchi",
+                    "english": "kimchi",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "비빔밥",
+                    "romanization": "bibimbap",
+                    "english": "mixed rice",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "물",
+                    "romanization": "mul",
+                    "english": "water",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "커피",
+                    "romanization": "keopi",
+                    "english": "coffee",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "차",
+                    "romanization": "cha",
+                    "english": "tea",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "K-pop Terms",
+            "id": "kpop",
+            "words": [
+                {
+                    "korean": "아이돌",
+                    "romanization": "aidol",
+                    "english": "idol",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                },
+                {
+                    "korean": "팬",
+                    "romanization": "paen",
+                    "english": "fan",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "콘서트",
+                    "romanization": "konseoteu",
+                    "english": "concert",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "데뷔",
+                    "romanization": "debwi",
+                    "english": "debut",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                },
+                {
+                    "korean": "컴백",
+                    "romanization": "keombaek",
+                    "english": "comeback",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                }
+            ]
+        },
+        {
+            "name": "Colors",
+            "id": "colors",
+            "words": [
+                {
+                    "korean": "빨간색",
+                    "romanization": "ppalgansaek",
+                    "english": "red",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "파란색",
+                    "romanization": "paransaek",
+                    "english": "blue",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "노란색",
+                    "romanization": "noransaek",
+                    "english": "yellow",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "초록색",
+                    "romanization": "choroksaek",
+                    "english": "green",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "검은색",
+                    "romanization": "geomeunsaek",
+                    "english": "black",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "하얀색",
+                    "romanization": "hayansaek",
+                    "english": "white",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Time",
+            "id": "time",
+            "words": [
+                {
+                    "korean": "오늘",
+                    "romanization": "oneul",
+                    "english": "today",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "어제",
+                    "romanization": "eoje",
+                    "english": "yesterday",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "내일",
+                    "romanization": "naeil",
+                    "english": "tomorrow",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "지금",
+                    "romanization": "jigeum",
+                    "english": "now",
+                    "partOfSpeech": "adverb",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "시간",
+                    "romanization": "sigan",
+                    "english": "time",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Weather",
+            "id": "weather",
+            "words": [
+                {
+                    "korean": "날씨",
+                    "romanization": "nalssi",
+                    "english": "weather",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "비",
+                    "romanization": "bi",
+                    "english": "rain",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "눈",
+                    "romanization": "nun",
+                    "english": "snow",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "바람",
+                    "romanization": "baram",
+                    "english": "wind",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "더워요",
+                    "romanization": "deowoyo",
+                    "english": "it's hot",
+                    "partOfSpeech": "adjective",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "추워요",
+                    "romanization": "chuwoyo",
+                    "english": "it's cold",
+                    "partOfSpeech": "adjective",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "Emotions",
+            "id": "emotions",
+            "words": [
+                {
+                    "korean": "행복",
+                    "romanization": "haengbok",
+                    "english": "happiness",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                },
+                {
+                    "korean": "슬픔",
+                    "romanization": "seulpeum",
+                    "english": "sadness",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                },
+                {
+                    "korean": "화",
+                    "romanization": "hwa",
+                    "english": "anger",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                },
+                {
+                    "korean": "사랑",
+                    "romanization": "sarang",
+                    "english": "love",
+                    "partOfSpeech": "noun",
+                    "level": "beginner"
+                },
+                {
+                    "korean": "기쁨",
+                    "romanization": "gippeum",
+                    "english": "joy",
+                    "partOfSpeech": "noun",
+                    "level": "intermediate"
+                }
+            ]
+        }
+    ]
+}

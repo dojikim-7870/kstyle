@@ -1,0 +1,172 @@
+{
+    "categories": [
+        {
+            "name": "Basic Vocabulary",
+            "id": "basic-vocab",
+            "questions": [
+                {
+                    "question": "What does '안녕하세요' mean?",
+                    "options": ["Goodbye", "Hello", "Thank you", "Sorry"],
+                    "correct": 1,
+                    "explanation": "'안녕하세요' is the formal way to say 'hello' in Korean."
+                },
+                {
+                    "question": "How do you say 'thank you' in Korean?",
+                    "options": ["죄송해요", "고마워요", "안녕하세요", "사랑해요"],
+                    "correct": 1,
+                    "explanation": "'고마워요' is the polite way to say 'thank you'."
+                },
+                {
+                    "question": "What is the Korean word for 'water'?",
+                    "options": ["커피", "차", "물", "우유"],
+                    "correct": 2,
+                    "explanation": "'물' means water in Korean."
+                },
+                {
+                    "question": "How do you say 'I love you' in Korean?",
+                    "options": ["보고 싶어요", "사랑해요", "좋아해요", "미안해요"],
+                    "correct": 1,
+                    "explanation": "'사랑해요' means 'I love you' in Korean."
+                },
+                {
+                    "question": "What does '가족' mean?",
+                    "options": ["Friend", "Family", "Teacher", "Student"],
+                    "correct": 1,
+                    "explanation": "'가족' means family in Korean."
+                }
+            ]
+        },
+        {
+            "name": "Korean Numbers",
+            "id": "numbers",
+            "questions": [
+                {
+                    "question": "What is 'one' in Korean (native numbers)?",
+                    "options": ["일", "하나", "첫", "원"],
+                    "correct": 1,
+                    "explanation": "'하나' is the native Korean number for 'one'."
+                },
+                {
+                    "question": "How do you say 'three' in Korean?",
+                    "options": ["둘", "셋", "넷", "다섯"],
+                    "correct": 1,
+                    "explanation": "'셋' is the Korean word for 'three'."
+                },
+                {
+                    "question": "What does '다섯' mean?",
+                    "options": ["Four", "Five", "Six", "Seven"],
+                    "correct": 1,
+                    "explanation": "'다섯' means 'five' in Korean."
+                },
+                {
+                    "question": "Which is the correct Korean number for 'two'?",
+                    "options": ["하나", "둘", "셋", "넷"],
+                    "correct": 1,
+                    "explanation": "'둘' is the Korean word for 'two'."
+                }
+            ]
+        },
+        {
+            "name": "K-pop Culture",
+            "id": "kpop-culture",
+            "questions": [
+                {
+                    "question": "What does '아이돌' mean?",
+                    "options": ["Fan", "Idol", "Song", "Dance"],
+                    "correct": 1,
+                    "explanation": "'아이돌' means 'idol' and refers to K-pop performers."
+                },
+                {
+                    "question": "What is a '컴백' in K-pop?",
+                    "options": ["Debut", "Comeback", "Concert", "Fan meeting"],
+                    "correct": 1,
+                    "explanation": "'컴백' means comeback - when a group releases new music after a break."
+                },
+                {
+                    "question": "What does '데뷔' mean?",
+                    "options": ["Retirement", "Debut", "Award", "Album"],
+                    "correct": 1,
+                    "explanation": "'데뷔' means debut - an artist's first official appearance."
+                },
+                {
+                    "question": "What is the Korean word for 'fan'?",
+                    "options": ["아이돌", "팬", "가수", "배우"],
+                    "correct": 1,
+                    "explanation": "'팬' is the Korean word for 'fan'."
+                },
+                {
+                    "question": "Which district in Seoul is famous for being wealthy and trendy?",
+                    "options": ["Hongdae", "Myeongdong", "Gangnam", "Itaewon"],
+                    "correct": 2,
+                    "explanation": "Gangnam is the wealthy, trendy district made famous by PSY's song."
+                }
+            ]
+        },
+        {
+            "name": "Korean Grammar",
+            "id": "grammar",
+            "questions": [
+                {
+                    "question": "What particle is used to mark the topic in Korean?",
+                    "options": ["을/를", "이/가", "은/는", "에"],
+                    "correct": 2,
+                    "explanation": "'은/는' is the topic particle in Korean."
+                },
+                {
+                    "question": "What does the particle '을/를' indicate?",
+                    "options": ["Subject", "Topic", "Object", "Location"],
+                    "correct": 2,
+                    "explanation": "'을/를' marks the direct object in Korean sentences."
+                },
+                {
+                    "question": "How do you make a verb polite in Korean?",
+                    "options": ["Add -다", "Add -요", "Add -지", "Add -니"],
+                    "correct": 1,
+                    "explanation": "Adding '-요' to verb stems makes them polite."
+                },
+                {
+                    "question": "What is the basic word order in Korean?",
+                    "options": ["SVO", "SOV", "VSO", "OSV"],
+                    "correct": 1,
+                    "explanation": "Korean follows Subject-Object-Verb (SOV) word order."
+                }
+            ]
+        },
+        {
+            "name": "Korean Culture",
+            "id": "culture",
+            "questions": [
+                {
+                    "question": "What is 'kimchi'?",
+                    "options": ["A dance", "Fermented vegetables", "A song", "A bow"],
+                    "correct": 1,
+                    "explanation": "Kimchi is Korea's famous fermented vegetable dish, usually made with cabbage."
+                },
+                {
+                    "question": "What does '정' (jeong) represent in Korean culture?",
+                    "options": ["Money", "Affection/attachment", "Time", "Food"],
+                    "correct": 1,
+                    "explanation": "'정' represents deep affection, attachment, and emotional bonds in Korean culture."
+                },
+                {
+                    "question": "What is the traditional Korean dress called?",
+                    "options": ["Kimono", "Hanbok", "Cheongsam", "Sari"],
+                    "correct": 1,
+                    "explanation": "Hanbok is the traditional Korean dress worn during special occasions."
+                },
+                {
+                    "question": "What is 'nunchi' in Korean culture?",
+                    "options": ["A food", "Social awareness", "A game", "A celebration"],
+                    "correct": 1,
+                    "explanation": "'Nunchi' is the Korean concept of social awareness and reading the room."
+                },
+                {
+                    "question": "What holiday celebrates the Korean harvest?",
+                    "options": ["Seollal", "Chuseok", "Buddha's Birthday", "Children's Day"],
+                    "correct": 1,
+                    "explanation": "Chuseok is the Korean harvest festival, similar to Thanksgiving."
+                }
+            ]
+        }
+    ]
+}
