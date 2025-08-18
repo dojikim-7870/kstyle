@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,6 +7,49 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎵%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="../styles/main.css">
+<style>
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto; 
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .modal-content .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .modal-content .close:hover {
+      color: #000;
+    }
+    .email-button {
+      padding: 8px 16px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .email-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+
+
 </head>
 <body>
   <!-- Header -->
@@ -69,10 +111,23 @@
             <p>If you have questions, feedback, or need assistance, feel free to contact us using the information below. We typically respond within 1–2 business days.</p>
             
             <div class="contact-info">
-              <p><strong>Email:</strong> <a href="mailto:support@kstyle.site">support@kstyle.site</a></p>
-              <p><strong>Subject Line:</strong> General Inquiry / Support</p>
-              <p><strong>Website:</strong> <a href="https://kstyle.site" target="_blank">kstyle.site</a></p>
-            </div>
+  <p><strong>Email:</strong> 
+    <button id="showEmailBtn" class="email-button">Send Mail</button>
+  </p>
+  <p><strong>Subject Line:</strong> General Inquiry / Support</p>
+  <p><strong>Website:</strong> <a href="https://kstyle.site" target="_blank">kstyle.site</a></p>
+</div>
+
+<!-- Modal -->
+<div id="emailModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Contact Email</h3>
+    <p>Please send your inquiries to the email below:</p>
+    <p><a href="mailto:support@kstyle.site" id="modalEmail">support@kstyle.site</a></p>
+  </div>
+</div>
+
           </div>
 
           <div class="legal-section">
@@ -130,7 +185,20 @@
       </div>
     </div>
   </footer>
+<script>
+    const modal = document.getElementById("emailModal");
+    const btn = document.getElementById("showEmailBtn");
+    const closeBtn = document.querySelector(".modal .close");
 
+    btn.onclick = () => modal.style.display = "block";
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
   <script src="../scripts/main.js"></script>
   <style>
     .page-hero {
