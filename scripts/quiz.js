@@ -45,7 +45,7 @@ class KoreanQuiz {
     setupEventListeners() {
         const startBtn = document.getElementById('start-quiz-btn');
         if (startBtn) {
-             startBtn.disabled = true; // 처음에는 비활성화
+             startBtn.disabled = true;
         }
 
         // Category selection
@@ -54,7 +54,7 @@ class KoreanQuiz {
                 const categoryId = e.target.dataset.categoryId;
                 this.selectCategory(categoryId);
                 if (startBtn) {
-                     startBtn.disabled = false; // 선택 후 활성화
+                     startBtn.disabled = false;
                 }
             }
         });
@@ -97,7 +97,7 @@ class KoreanQuiz {
         const categoryContainer = document.getElementById('category-container');
         if (!categoryContainer) return;
         
-        categoryContainer.innerHTML = ''; // Clear previous categories
+        categoryContainer.innerHTML = '';
         if (this.categories.length === 0) {
             categoryContainer.innerHTML = `<p>No quiz categories available.</p>`;
             return;
@@ -126,14 +126,11 @@ class KoreanQuiz {
             document.querySelector('.quiz-category-title').textContent = this.selectedCategory.name;
             document.getElementById('quiz-intro').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'block';
-            
-            // Wait for user to click start button after selection
         }
     }
 
     startQuiz() {
         if (!this.selectedCategory) {
-            // This case should not be reached with the button being disabled
             return;
         }
         
