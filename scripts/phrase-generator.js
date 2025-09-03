@@ -120,7 +120,10 @@ class PhraseGenerator {
                     <p>No phrases generated yet. Start practicing to see your phrase history!</p>
                 </div>
             `;
-            document.getElementById('history-controls').style.display = 'none';
+            const historyControls = document.getElementById('history-controls');
+            if (historyControls) {
+                 historyControls.style.display = 'none';
+            }
         } else {
             historyContainer.innerHTML = '';
             this.phraseHistory.forEach(phrase => {
@@ -136,7 +139,10 @@ class PhraseGenerator {
                 `;
                 historyContainer.appendChild(historyCard);
             });
-            document.getElementById('history-controls').style.display = 'flex';
+            const historyControls = document.getElementById('history-controls');
+            if (historyControls) {
+                 historyControls.style.display = 'flex';
+            }
         }
     }
 
