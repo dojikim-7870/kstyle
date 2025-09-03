@@ -43,11 +43,19 @@ class KoreanQuiz {
     }
     
     setupEventListeners() {
+        const startBtn = document.getElementById('start-quiz-btn');
+        if (startBtn) {
+             startBtn.disabled = true; // Initially disable the start button
+        }
+
         // Category selection
         document.addEventListener('click', (e) => {
             if (e.target.matches('.category-btn')) {
                 const categoryId = e.target.dataset.categoryId;
                 this.selectCategory(categoryId);
+                if (startBtn) {
+                     startBtn.disabled = false; // Enable start button after selection
+                }
             }
         });
         
@@ -70,7 +78,6 @@ class KoreanQuiz {
         });
 
         // Start button
-        const startBtn = document.getElementById('start-quiz-btn');
         if (startBtn) {
             startBtn.addEventListener('click', () => {
                 this.startQuiz();
@@ -106,22 +113,30 @@ class KoreanQuiz {
     }
 
     selectCategory(categoryId) {
+        // Highlight the selected button
+        document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('selected'));
+        const selectedBtn = document.querySelector(`[data-category-id="${categoryId}"]`);
+        if (selectedBtn) {
+            selectedBtn.classList.add('selected');
+        }
+
         const category = this.categories.find(c => c.id === categoryId);
         if (category) {
             this.selectedCategory = category;
             document.querySelector('.quiz-category-title').textContent = this.selectedCategory.name;
             document.getElementById('quiz-intro').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'block';
-            this.startQuiz();
+            
+            // Wait for user to click start button after selection
         }
     }
 
     startQuiz() {
         if (!this.selectedCategory) {
-            alert("Please select a category first.");
+            // This case should not be reached with the button being disabled
             return;
         }
-
+        
         this.questions = this.selectedCategory.questions;
         this.questions = this.shuffleArray(this.questions);
         
@@ -233,6 +248,7 @@ class KoreanQuiz {
     restartQuiz() {
         document.getElementById('quiz-result').style.display = 'none';
         document.getElementById('quiz-intro').style.display = 'block';
+        document.getElementById('quiz-container').style.display = 'none';
     }
 
     updateProgress() {
