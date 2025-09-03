@@ -19,6 +19,12 @@
       "category": "greetings"
     },
     {
+      "korean": "처음 뵙겠습니다",
+      "romanization": "cheoeum boepgetseumnida",
+      "english": "Nice to meet you (formal)",
+      "category": "greetings"
+    },
+    {
       "korean": "감사합니다",
       "romanization": "gamsahamnida",
       "english": "Thank you (formal)",
@@ -37,22 +43,16 @@
       "category": "politeness"
     },
     {
-      "korean": "밥 먹었어요?",
-      "romanization": "bap meogeosseoyo?",
-      "english": "Have you eaten?",
-      "category": "daily"
+      "korean": "미안해요",
+      "romanization": "mianhaeyo",
+      "english": "Sorry (casual)",
+      "category": "politeness"
     },
     {
-      "korean": "어디 가세요?",
-      "romanization": "eodi gaseyo?",
-      "english": "Where are you going?",
-      "category": "daily"
-    },
-    {
-      "korean": "피곤해요",
-      "romanization": "pigonhaeyo",
-      "english": "I'm tired",
-      "category": "daily"
+      "korean": "괜찮아요",
+      "romanization": "gwaenchanayo",
+      "english": "It's okay / I'm okay",
+      "category": "politeness"
     },
     {
       "korean": "사랑해요",
@@ -77,6 +77,24 @@
       "romanization": "hwaiting!",
       "english": "You can do it! / Fighting!",
       "category": "encouragement"
+    },
+    {
+      "korean": "밥 먹었어요?",
+      "romanization": "bap meogeosseoyo?",
+      "english": "Have you eaten?",
+      "category": "daily"
+    },
+    {
+      "korean": "어디 가세요?",
+      "romanization": "eodi gaseyo?",
+      "english": "Where are you going?",
+      "category": "daily"
+    },
+    {
+      "korean": "피곤해요",
+      "romanization": "pigonhaeyo",
+      "english": "I'm tired",
+      "category": "daily"
     },
     {
       "korean": "이해해요",
