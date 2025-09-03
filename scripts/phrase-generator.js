@@ -33,12 +33,10 @@ class PhraseGenerator {
         try {
             const response = await fetch('/data/phrases.json');
             if (!response.ok) {
-                // If the server returns an error (like 404), throw an error with the status
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
             const data = await response.json();
-            // Check if 'phrases' array exists and is not empty
             this.phrases = data.phrases || [];
             
             if (this.phrases.length === 0) {
@@ -47,7 +45,6 @@ class PhraseGenerator {
             
             console.log(`Loaded ${this.phrases.length} Korean phrases.`);
         } catch (error) {
-            // Re-throw the error to be caught by the init() method's catch block
             throw new Error(`Error loading phrases: ${error.message}`);
         }
     }
@@ -62,14 +59,30 @@ class PhraseGenerator {
     }
 
     displayRandomPhrase() {
-        if (this.phrases.length === 0) {
-            this.handleError('No phrases available. Please check the phrases.json file.');
+        const categorySelect = document.getElementById('category-select');
+        const selectedCategory = categorySelect ? categorySelect.value : 'all';
+
+        let filteredPhrases = this.phrases;
+        if (selectedCategory !== 'all') {
+            filteredPhrases = this.phrases.filter(phrase => 
+                phrase.category.toLowerCase() === selectedCategory.toLowerCase()
+            );
+        }
+
+        if (filteredPhrases.length === 0) {
+            const phraseContainer = document.getElementById('current-phrase-display');
+            phraseContainer.innerHTML = `
+                <div class="phrase-content">
+                    <div class="phrase-korean-display">No phrases found for this category.</div>
+                    <div class="phrase-english-display">Try selecting a different category.</div>
+                </div>
+            `;
             return;
         }
-        
+
         const phraseContainer = document.getElementById('current-phrase-display');
-        const randomIndex = Math.floor(Math.random() * this.phrases.length);
-        this.currentPhrase = this.phrases[randomIndex];
+        const randomIndex = Math.floor(Math.random() * filteredPhrases.length);
+        this.currentPhrase = filteredPhrases[randomIndex];
         
         phraseContainer.innerHTML = `
             <div class="phrase-content">
