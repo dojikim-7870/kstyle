@@ -192,9 +192,26 @@ class PhraseGenerator {
     }
 }
 
-// A dummy playAudio function to prevent errors until audio files are added
+// 스피커 버튼을 눌렀을 때 실제로 오디오를 재생하는 함수
 function playAudio(text) {
     console.log(`Playing audio for: "${text}"`);
+
+    // SpeechSynthesisUtterance: 웹 브라우저의 음성 합성 기능을 사용
+    const speech = new SpeechSynthesisUtterance(text);
+
+    // 한국어 음성을 찾아서 지정
+    const voices = window.speechSynthesis.getVoices();
+    const koreanVoice = voices.find(voice => voice.lang.startsWith('ko'));
+
+    if (koreanVoice) {
+        speech.voice = koreanVoice;
+    } else {
+        // 한국어 음성이 없으면 기본 음성을 사용
+        console.warn('Korean voice not found. Using default voice.');
+    }
+
+    // 오디오 재생
+    window.speechSynthesis.speak(speech);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
