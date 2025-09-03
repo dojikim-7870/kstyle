@@ -8,95 +8,542 @@
     <meta name="keywords" content="Korean quiz, Korean test, Korean language quiz, K-pop quiz, Korean vocabulary test, Korean grammar quiz">
     <meta name="author" content="K-Style Learning">
     
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Korean Quiz - Interactive Language Learning Tests">
     <meta property="og:description" content="Test your Korean language skills with interactive quizzes and track your progress">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kstyle.site/pages/quiz.html">
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎵%3C/text%3E%3C/svg%3E">
     
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../styles/main.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Korean Language Quiz",
+        "description": "Interactive Korean language quiz covering vocabulary, grammar, and culture",
+        "educationalLevel": "All Levels",
+        "learningResourceType": "Quiz"
+    }
+    </script>
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="container">
-            <a href="../index.html" class="logo">K-Style Learning</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="basics.html">Basics</a></li>
-                    <li><a href="phrase-generator.html">Phrases</a></li>
-                    <li><a href="quiz.html" class="active">Quiz</a></li>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="../index.html">
+                        <span class="brand-icon">🎵</span>
+                        <span class="brand-text">K-Style Learning</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Lessons <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="basics.html">Korean Basics</a></li>
+                            <li><a href="grammar.html">Grammar Guide</a></li>
+                            <li><a href="vocabulary.html">Vocabulary</a></li>
+                            <li><a href="culture.html">Korean Culture</a></li>
+                            <li><a href="pronunciation.html">Pronunciation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="quiz.html" class="nav-link active">Quiz</a></li>
+                    <li><a href="phrase-generator.html" class="nav-link">Phrases</a></li>
+                    <li><a href="lyrics.html" class="nav-link">K-pop Lyrics</a></li>
                 </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Page Header -->
         <section class="page-hero">
             <div class="container">
-                <h1 class="page-title">Test Your Korean Skills!</h1>
-                <p class="hero-subtitle">Choose a category below to challenge yourself and track your progress.</p>
-            </div>
-        </section>
-
-        <section class="page-content" id="quiz-intro">
-            <div class="container">
-                <div class="quiz-intro-box">
-                    <h2>Choose Your Quiz Category</h2>
-                    <p>Select a topic to start your interactive quiz. Your knowledge will be tested with multiple-choice questions.</p>
-                    <div class="category-container" id="category-container">
-                        <div class="category-loading-message">Loading categories...</div>
+                <div class="page-hero-content">
+                    <h1>Korean Language Quiz</h1>
+                    <p>Test your Korean knowledge with interactive quizzes and track your progress</p>
+                    <div class="page-breadcrumb">
+                        <a href="../index.html">Home</a> > <span>Quiz</span>
                     </div>
-                    <button class="btn btn-primary" id="start-quiz-btn" disabled>Start Quiz</button>
                 </div>
             </div>
         </section>
 
-        <section class="quiz-container" id="quiz-container" style="display: none;">
+        <!-- Quiz Container -->
+        <section class="lesson-section">
             <div class="container">
-                <div class="quiz-box">
-                    <h2 class="quiz-category-title"></h2>
-                    <div class="quiz-header">
-                        <div class="progress-bar-container">
-                            <span id="progress-display">Question 1 of 10</span>
-                            <div class="progress-bar"></div>
-                        </div>
-                        <div class="timer-display">
-                            Time: <span id="timer-display">30</span>s
+                <div id="quiz-container">
+                    <!-- Quiz content will be loaded here by JavaScript -->
+                    <div class="loading-state">
+                        <h2>Loading Korean Quiz...</h2>
+                        <p>Please wait while we prepare your quiz questions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Features Section -->
+        <section class="lesson-section quiz-features">
+            <div class="container">
+                <h2 class="section-title">Quiz Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your improvement over time with detailed score tracking and performance analytics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Timed Challenges</h3>
+                        <p>Practice under time pressure to improve your quick thinking and recall speed in Korean.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Adaptive Difficulty</h3>
+                        <p>Questions adjust to your skill level, providing the right challenge for continuous improvement.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Detailed Explanations</h3>
+                        <p>Learn from your mistakes with comprehensive explanations for every question and answer.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Achievement System</h3>
+                        <p>Earn achievements and unlock new quiz categories as you progress through your learning journey.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3>K-pop Integration</h3>
+                        <p>Special quiz categories featuring K-pop vocabulary, culture, and song lyric comprehension.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Categories Preview -->
+        <section class="lesson-section categories-preview">
+            <div class="container">
+                <h2 class="section-title">Available Quiz Categories</h2>
+                <p class="section-intro">Choose from various categories to focus on specific areas of Korean language learning.</p>
+                
+                <div class="categories-grid">
+                    <div class="category-preview">
+                        <div class="category-icon">📝</div>
+                        <h3>Basic Vocabulary</h3>
+                        <p>Test your knowledge of essential Korean words, greetings, and everyday expressions.</p>
+                        <div class="category-stats">
+                            <span class="stat">25+ Questions</span>
+                            <span class="difficulty beginner">Beginner</span>
                         </div>
                     </div>
-                    <div class="quiz-main" id="quiz-main">
-                        <p id="question-text" class="question-text">Loading question...</p>
-                        <div class="answer-options" id="answer-options">
-                            </div>
-                        <div class="feedback" id="feedback"></div>
-                        <button class="btn btn-secondary" id="next-btn" style="display: none;">Next Question</button>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🔢</div>
+                        <h3>Korean Numbers</h3>
+                        <p>Master both native Korean and Sino-Korean number systems with practical exercises.</p>
+                        <div class="category-stats">
+                            <span class="stat">15+ Questions</span>
+                            <span class="difficulty beginner">Beginner</span>
+                        </div>
                     </div>
-                    <div class="quiz-result" id="quiz-result" style="display: none;">
-                        <h3>Quiz Complete!</h3>
-                        <p>Your Score: <span id="score-display">0/10</span></p>
-                        <div class="review-container" id="review-container">
-                            </div>
-                        <button class="btn btn-primary" id="restart-quiz-btn">Restart Quiz</button>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">⚙️</div>
+                        <h3>Korean Grammar</h3>
+                        <p>Challenge yourself with particles, verb conjugations, and sentence structure questions.</p>
+                        <div class="category-stats">
+                            <span class="stat">20+ Questions</span>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🎤</div>
+                        <h3>K-pop Culture</h3>
+                        <p>Test your knowledge of K-pop terminology, idol culture, and entertainment industry vocabulary.</p>
+                        <div class="category-stats">
+                            <span class="stat">20+ Questions</span>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🏛️</div>
+                        <h3>Korean Culture</h3>
+                        <p>Explore traditional and modern Korean culture, customs, and social values.</p>
+                        <div class="category-stats">
+                            <span class="stat">18+ Questions</span>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🎲</div>
+                        <h3>Mixed Challenge</h3>
+                        <p>Random questions from all categories for a comprehensive knowledge test.</p>
+                        <div class="category-stats">
+                            <span class="stat">Unlimited</span>
+                            <span class="difficulty all">All Levels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tips Section -->
+        <section class="lesson-section study-tips">
+            <div class="container">
+                <h2 class="section-title">Quiz Study Tips</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>🎯 Focus on Weak Areas</h3>
+                        <p>Use quiz results to identify topics that need more study. Focus your learning efforts on areas where you scored lower.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>📅 Regular Practice</h3>
+                        <p>Take quizzes regularly to reinforce learning. Even 5-10 minutes daily can significantly improve retention.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>📖 Review Explanations</h3>
+                        <p>Always read the explanations for both correct and incorrect answers to deepen your understanding.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>⏰ Time Management</h3>
+                        <p>Practice with timed quizzes to improve your speed and confidence for real conversations and tests.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources Section -->
+        <section class="lesson-section related-resources">
+            <div class="container">
+                <h2 class="section-title">Enhance Your Learning</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>📚 Study Before Quiz</h3>
+                        <p>Review vocabulary and grammar lessons before taking quizzes for better results.</p>
+                        <a href="vocabulary.html" class="btn btn-primary">Study Vocabulary</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>🎵 Practice with Music</h3>
+                        <p>Learn Korean through K-pop lyrics to make vocabulary and grammar more memorable.</p>
+                        <a href="lyrics.html" class="btn btn-secondary">K-pop Lyrics</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>💬 Practice Phrases</h3>
+                        <p>Use our phrase generator to practice Korean expressions and sentence patterns.</p>
+                        <a href="phrase-generator.html" class="btn btn-outline">Generate Phrases</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 K-Style Learning. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#"><img src="../assets/icons/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="../assets/icons/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="../assets/icons/twitter.svg" alt="Twitter"></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>K-Style Learning</h3>
+                    <p>Your gateway to Korean language and K-pop culture. Learn, practice, and immerse yourself in the beautiful Korean language.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn Korean</h4>
+                    <ul>
+                        <li><a href="basics.html">Korean Basics</a></li>
+                        <li><a href="grammar.html">Grammar Guide</a></li>
+                        <li><a href="vocabulary.html">Vocabulary</a></li>
+                        <li><a href="pronunciation.html">Pronunciation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Interactive Tools</h4>
+                    <ul>
+                        <li><a href="quiz.html">Korean Quiz</a></li>
+                        <li><a href="phrase-generator.html">Phrase Generator</a></li>
+                        <li><a href="lyrics.html">K-pop Lyrics</a></li>
+                        <li><a href="culture.html">Korean Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 K-Style Learning. All rights reserved. Made with ❤️ for K-pop fans worldwide.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
     <script src="../scripts/quiz.js"></script>
+    
+    <!-- Page-specific styles -->
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 80px;
+        }
+        
+        .page-hero-content {
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .page-breadcrumb {
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .page-breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .lesson-section {
+            padding: 60px 0;
+        }
+        
+        .lesson-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+        
+        .loading-state h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-features {
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .categories-preview {
+            background: #f8f9fa;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .category-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-preview h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .category-preview p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .category-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stat {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .difficulty {
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .difficulty.beginner {
+            background: #2ecc71;
+        }
+        
+        .difficulty.intermediate {
+            background: #f39c12;
+        }
+        
+        .difficulty.advanced {
+            background: #e74c3c;
+        }
+        
+        .difficulty.all {
+            background: #9b59b6;
+        }
+        
+        .study-tips {
+            background: white;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .tip-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .related-resources {
+            background: var(--light-color);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
