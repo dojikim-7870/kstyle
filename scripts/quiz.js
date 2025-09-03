@@ -45,7 +45,7 @@ class KoreanQuiz {
     setupEventListeners() {
         const startBtn = document.getElementById('start-quiz-btn');
         if (startBtn) {
-             startBtn.disabled = true; // Initially disable the start button
+             startBtn.disabled = true; // 처음에는 비활성화
         }
 
         // Category selection
@@ -54,7 +54,7 @@ class KoreanQuiz {
                 const categoryId = e.target.dataset.categoryId;
                 this.selectCategory(categoryId);
                 if (startBtn) {
-                     startBtn.disabled = false; // Enable start button after selection
+                     startBtn.disabled = false; // 선택 후 활성화
                 }
             }
         });
