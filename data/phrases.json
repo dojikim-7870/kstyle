@@ -1,214 +1,112 @@
 {
-    "phrases": [
-        {
-            "korean": "안녕하세요",
-            "romanization": "annyeonghaseyo",
-            "english": "Hello (formal)",
-            "category": "Greetings",
-            "usage": "Use when meeting someone for the first time or in formal situations"
-        },
-        {
-            "korean": "고마워요",
-            "romanization": "gomawoyo",
-            "english": "Thank you",
-            "category": "Politeness",
-            "usage": "Casual way to express gratitude"
-        },
-        {
-            "korean": "죄송해요",
-            "romanization": "joesonghaeyo",
-            "english": "I'm sorry",
-            "category": "Politeness",
-            "usage": "Formal apology for mistakes or inconvenience"
-        },
-        {
-            "korean": "사랑해요",
-            "romanization": "saranghaeyo",
-            "english": "I love you",
-            "category": "Emotions",
-            "usage": "Express love to family, friends, or romantic partners"
-        },
-        {
-            "korean": "잘 지내세요",
-            "romanization": "jal jinaeseyo",
-            "english": "Take care",
-            "category": "Farewells",
-            "usage": "Kind way to say goodbye, wishing someone well"
-        },
-        {
-            "korean": "화이팅!",
-            "romanization": "hwaiting!",
-            "english": "Fighting! / Good luck!",
-            "category": "Encouragement",
-            "usage": "Cheer someone on or encourage them before a challenge"
-        },
-        {
-            "korean": "괜찮아요",
-            "romanization": "gwaenchanayo",
-            "english": "It's okay",
-            "category": "Comfort",
-            "usage": "Reassure someone or accept an apology"
-        },
-        {
-            "korean": "맛있어요",
-            "romanization": "masisseoyo",
-            "english": "It's delicious",
-            "category": "Food",
-            "usage": "Compliment food or express that something tastes good"
-        },
-        {
-            "korean": "예뻐요",
-            "romanization": "yeppeoyo",
-            "english": "It's pretty/beautiful",
-            "category": "Compliments",
-            "usage": "Compliment someone's appearance or something beautiful"
-        },
-        {
-            "korean": "잘했어요",
-            "romanization": "jalhaesseoyo",
-            "english": "Well done / Good job",
-            "category": "Praise",
-            "usage": "Praise someone for their good work or achievement"
-        },
-        {
-            "korean": "보고 싶어요",
-            "romanization": "bogo sipeoyo",
-            "english": "I miss you",
-            "category": "Emotions",
-            "usage": "Express longing for someone you haven't seen"
-        },
-        {
-            "korean": "이해해요",
-            "romanization": "ihaehaeyo",
-            "english": "I understand",
-            "category": "Communication",
-            "usage": "Show that you comprehend what someone is saying"
-        },
-        {
-            "korean": "힘내세요",
-            "romanization": "himnaeseyo",
-            "english": "Cheer up / Stay strong",
-            "category": "Encouragement",
-            "usage": "Encourage someone who is feeling down"
-        },
-        {
-            "korean": "축하해요",
-            "romanization": "chukhahaeyo",
-            "english": "Congratulations",
-            "category": "Celebrations",
-            "usage": "Celebrate someone's achievement or good news"
-        },
-        {
-            "korean": "재미있어요",
-            "romanization": "jaemiisseoyo",
-            "english": "It's fun/interesting",
-            "category": "Entertainment",
-            "usage": "Express that something is enjoyable or entertaining"
-        },
-        {
-            "korean": "피곤해요",
-            "romanization": "pigonhaeyo",
-            "english": "I'm tired",
-            "category": "Feelings",
-            "usage": "Express physical or mental fatigue"
-        },
-        {
-            "korean": "배고파요",
-            "romanization": "baegopayo",
-            "english": "I'm hungry",
-            "category": "Physical needs",
-            "usage": "Express hunger or desire to eat"
-        },
-        {
-            "korean": "행복해요",
-            "romanization": "haengbokhaeyo",
-            "english": "I'm happy",
-            "category": "Emotions",
-            "usage": "Express joy and contentment"
-        },
-        {
-            "korean": "조심하세요",
-            "romanization": "josimhaseyo",
-            "english": "Be careful",
-            "category": "Safety",
-            "usage": "Warn someone to be cautious"
-        },
-        {
-            "korean": "궁금해요",
-            "romanization": "gunggeumhaeyo",
-            "english": "I'm curious",
-            "category": "Interest",
-            "usage": "Express curiosity or interest in something"
-        },
-        {
-            "korean": "멋있어요",
-            "romanization": "meossisseoyo",
-            "english": "It's cool/awesome",
-            "category": "Compliments",
-            "usage": "Compliment something impressive or stylish"
-        },
-        {
-            "korean": "귀여워요",
-            "romanization": "gwiyeowoyo",
-            "english": "It's cute",
-            "category": "Compliments",
-            "usage": "Describe something or someone as cute or adorable"
-        },
-        {
-            "korean": "신나요",
-            "romanization": "sinnayo",
-            "english": "I'm excited",
-            "category": "Emotions",
-            "usage": "Express excitement or enthusiasm"
-        },
-        {
-            "korean": "어려워요",
-            "romanization": "eoryeowoyo",
-            "english": "It's difficult",
-            "category": "Learning",
-            "usage": "Express that something is challenging or hard to understand"
-        },
-        {
-            "korean": "쉬워요",
-            "romanization": "swiwoyo",
-            "english": "It's easy",
-            "category": "Learning",
-            "usage": "Express that something is simple or easy to do"
-        },
-        {
-            "korean": "좋아해요",
-            "romanization": "johahaeyo",
-            "english": "I like it",
-            "category": "Preferences",
-            "usage": "Express liking or preference for something"
-        },
-        {
-            "korean": "싫어해요",
-            "romanization": "sileohaeyo",
-            "english": "I don't like it",
-            "category": "Preferences",
-            "usage": "Express dislike or negative preference"
-        },
-        {
-            "korean": "도와주세요",
-            "romanization": "dowajuseyo",
-            "english": "Please help me",
-            "category": "Requests",
-            "usage": "Ask for assistance politely"
-        },
-        {
-            "korean": "기다려주세요",
-            "romanization": "gidaryeojuseyo",
-            "english": "Please wait",
-            "category": "Requests",
-            "usage": "Ask someone to wait politely"
-        },
-        {
-            "korean": "놀라워요",
-            "romanization": "nollawoyo",
-            "english": "It's amazing/surprising",
-            "category": "Reactions",
-            "usage": "Express amazement or surprise"
-        }
-    ]
+  "phrases": [
+    {
+      "korean": "안녕하세요",
+      "romanization": "annyeonghaseyo",
+      "english": "Hello (formal)",
+      "category": "greetings"
+    },
+    {
+      "korean": "잘 지내셨어요?",
+      "romanization": "jal jinaesyeosseoyo?",
+      "english": "How have you been?",
+      "category": "greetings"
+    },
+    {
+      "korean": "반갑습니다",
+      "romanization": "bangapseumnida",
+      "english": "Nice to meet you",
+      "category": "greetings"
+    },
+    {
+      "korean": "처음 뵙겠습니다",
+      "romanization": "cheoeum boepgetseumnida",
+      "english": "Nice to meet you (formal)",
+      "category": "greetings"
+    },
+    {
+      "korean": "감사합니다",
+      "romanization": "gamsahamnida",
+      "english": "Thank you (formal)",
+      "category": "politeness"
+    },
+    {
+      "korean": "고마워요",
+      "romanization": "gomawoyo",
+      "english": "Thank you (casual)",
+      "category": "politeness"
+    },
+    {
+      "korean": "죄송합니다",
+      "romanization": "joesonghamnida",
+      "english": "I'm sorry (formal)",
+      "category": "politeness"
+    },
+    {
+      "korean": "미안해요",
+      "romanization": "mianhaeyo",
+      "english": "Sorry (casual)",
+      "category": "politeness"
+    },
+    {
+      "korean": "괜찮아요",
+      "romanization": "gwaenchanayo",
+      "english": "It's okay / I'm okay",
+      "category": "politeness"
+    },
+    {
+      "korean": "사랑해요",
+      "romanization": "saranghaeyo",
+      "english": "I love you",
+      "category": "emotions"
+    },
+    {
+      "korean": "보고 싶어요",
+      "romanization": "bogo sipeoyo",
+      "english": "I miss you",
+      "category": "emotions"
+    },
+    {
+      "korean": "잘했어요",
+      "romanization": "jalhaesseoyo",
+      "english": "You did a good job",
+      "category": "encouragement"
+    },
+    {
+      "korean": "화이팅!",
+      "romanization": "hwaiting!",
+      "english": "You can do it! / Fighting!",
+      "category": "encouragement"
+    },
+    {
+      "korean": "밥 먹었어요?",
+      "romanization": "bap meogeosseoyo?",
+      "english": "Have you eaten?",
+      "category": "daily"
+    },
+    {
+      "korean": "어디 가세요?",
+      "romanization": "eodi gaseyo?",
+      "english": "Where are you going?",
+      "category": "daily"
+    },
+    {
+      "korean": "피곤해요",
+      "romanization": "pigonhaeyo",
+      "english": "I'm tired",
+      "category": "daily"
+    },
+    {
+      "korean": "이해해요",
+      "romanization": "ihaehayo",
+      "english": "I understand",
+      "category": "communication"
+    },
+    {
+      "korean": "도와주세요",
+      "romanization": "dowajuseyo",
+      "english": "Please help me",
+      "category": "communication"
+    }
+  ]
 }
