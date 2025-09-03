@@ -1,7 +1,7 @@
 {
   "categories": [
     {
-      "id": "basic_greetings",
+      "id": "basic-greetings",
       "name": "Basic Greetings",
       "questions": [
         {
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "id": "daily_life",
+      "id": "daily-life",
       "name": "Daily Life",
       "questions": [
         {
@@ -48,23 +48,7 @@
       ]
     },
     {
-      "id": "numbers",
-      "name": "Numbers",
-      "questions": [
-        {
-          "text": "What is the Korean word for 'one'?",
-          "options": ["하나", "둘", "셋", "넷"],
-          "correctAnswer": "하나"
-        },
-        {
-          "text": "The Korean word '셋' means:",
-          "options": ["1", "2", "3", "4"],
-          "correctAnswer": "3"
-        }
-      ]
-    },
-    {
-      "id": "kpop_culture",
+      "id": "kpop-culture",
       "name": "K-Pop & Culture",
       "questions": [
         {
@@ -76,27 +60,6 @@
           "text": "The word '대박 (daebak)' expresses:",
           "options": ["It's hot", "Amazing!", "I'm tired", "I miss you"],
           "correctAnswer": "Amazing!"
-        },
-        {
-          "text": "What does '선배 (sunbae)' refer to?",
-          "options": ["A senior person", "A junior person", "A friend", "A teacher"],
-          "correctAnswer": "A senior person"
-        }
-      ]
-    },
-    {
-      "id": "phrases",
-      "name": "Common Phrases",
-      "questions": [
-        {
-          "text": "The phrase '이해해요' means:",
-          "options": ["I don't know", "I'm sorry", "I love you", "I understand"],
-          "correctAnswer": "I understand"
-        },
-        {
-          "text": "What is the meaning of '도와주세요'?",
-          "options": ["Please help me", "Please wait", "Goodbye", "I'm hungry"],
-          "correctAnswer": "Please help me"
         }
       ]
     }
