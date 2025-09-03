@@ -50,9 +50,11 @@ class PhraseGenerator {
     }
     
     setupEventListeners() {
-        const newPhraseBtn = document.getElementById('new-phrase-btn');
+        // 올바른 버튼 ID로 수정되었습니다!
+        const newPhraseBtn = document.getElementById('generate-phrase-btn');
         if (newPhraseBtn) {
             newPhraseBtn.addEventListener('click', () => {
+                console.log('Generate button clicked. Displaying new phrase...');
                 this.displayRandomPhrase();
             });
         }
