@@ -27,7 +27,6 @@ class KoreanQuiz {
     
     async loadQuestions() {
         try {
-            // 'quiz-questions.json' 파일이 'data' 폴더에 있을 경우의 올바른 경로입니다.
             const response = await fetch('../data/quiz-questions.json'); 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -48,17 +47,6 @@ class KoreanQuiz {
         if (startBtn) {
              startBtn.disabled = true;
         }
-
-        // Category selection
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('.category-btn')) {
-                const categoryId = e.target.dataset.categoryId;
-                this.selectCategory(categoryId);
-                if (startBtn) {
-                     startBtn.disabled = false;
-                }
-            }
-        });
         
         // Next button click
         const nextBtn = document.getElementById('next-btn');
@@ -110,6 +98,22 @@ class KoreanQuiz {
             button.className = 'category-btn';
             button.textContent = category.name;
             button.dataset.categoryId = category.id;
+            
+            button.addEventListener('click', () => {
+                // Remove 'selected' class from all buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                // Add 'selected' class to the clicked button
+                button.classList.add('selected');
+
+                this.selectCategory(category.id);
+                const startBtn = document.getElementById('start-quiz-btn');
+                if (startBtn) {
+                     startBtn.disabled = false;
+                }
+            });
+
             categoryContainer.appendChild(button);
         });
     }
