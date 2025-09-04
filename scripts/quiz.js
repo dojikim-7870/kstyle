@@ -27,8 +27,8 @@ class KoreanQuiz {
     
     async loadQuestions() {
         try {
-            // 파일을 `data` 폴더가 아닌 현재 경로에서 가져오도록 수정했습니다.
-            const response = await fetch('./quiz-questions.json'); 
+            // 파일을 'scripts' 폴더의 상위 폴더에서 찾도록 경로를 수정했습니다.
+            const response = await fetch('../quiz-questions.json'); 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
