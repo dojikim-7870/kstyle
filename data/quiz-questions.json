@@ -5,24 +5,29 @@
       "name": "Basic Greetings",
       "questions": [
         {
-          "text": "안녕하세요 is a formal way to say...",
-          "options": ["Thank you", "Goodbye", "Hello", "How are you?"],
-          "correctAnswer": "Hello"
+          "text": "다음 중 'Hello'를 가장 공손하게 말하는 방법은?",
+          "options": ["안녕", "안녕하세요", "여보세요", "만나서 반가워"],
+          "correctAnswer": "안녕하세요"
         },
         {
-          "text": "The Korean word for 'Thank you' is:",
-          "options": ["미안해요", "안녕하세요", "고마워요", "괜찮아요"],
-          "correctAnswer": "고마워요"
+          "text": "누군가에게 감사를 표현할 때 가장 공손한 표현은?",
+          "options": ["고맙습니다", "고마워", "죄송합니다", "미안해"],
+          "correctAnswer": "고맙습니다"
         },
         {
-          "text": "Which phrase is used to apologize?",
-          "options": ["반갑습니다", "죄송합니다", "잘 지내세요", "어디 가세요?"],
-          "correctAnswer": "죄송합니다"
+          "text": "'How are you?'를 묻는 가장 일반적인 표현은 무엇인가요?",
+          "options": ["잘가요?", "밥 먹었어요?", "어떻게 지내세요?", "뭐 해요?"],
+          "correctAnswer": "어떻게 지내세요?"
         },
         {
-          "text": "How do you say 'Nice to meet you'?",
-          "options": ["잘 지내셨어요?", "감사합니다", "반갑습니다", "사랑해요"],
-          "correctAnswer": "반갑습니다"
+          "text": "'I'm sorry'를 말할 때 사용하는 가장 흔하고 공손한 표현은 무엇인가요?",
+          "options": ["괜찮아", "미안해요", "고마워", "반가워요"],
+          "correctAnswer": "미안해요"
+        },
+        {
+          "text": "당신이 떠날 때, 다른 사람에게 'Goodbye'를 어떻게 말할 수 있나요?",
+          "options": ["안녕히 계세요", "안녕히 가세요", "잘 지내", "잘 먹겠습니다"],
+          "correctAnswer": "안녕히 계세요"
         }
       ]
     },
@@ -31,19 +36,29 @@
       "name": "Daily Life",
       "questions": [
         {
+          "text": "길을 걷다가 실수로 누군가와 부딪혔을 때, 주의를 끌거나 사과하기 위해 어떤 말을 사용하나요?",
+          "options": ["잠시만요", "안녕하십니까", "사랑해요", "배고파요"],
+          "correctAnswer": "잠시만요"
+        },
+        {
+          "text": "배가 고플 때 'I'm hungry'를 말하는 방법은?",
+          "options": ["졸려요", "배불러요", "목말라요", "배고파요"],
+          "correctAnswer": "배고파요"
+        },
+        {
+          "text": "음식이 아주 맛있을 때 어떻게 표현하나요?",
+          "options": ["맛없어요", "맛있어요", "배고파요", "괜찮아요"],
+          "correctAnswer": "맛있어요"
+        },
+        {
+          "text": "물건의 가격을 묻고 싶을 때 어떤 표현을 사용하나요?",
+          "options": ["이거 어디에요?", "이거 얼마에요?", "이거 뭐에요?", "이거 좋아요?"],
+          "correctAnswer": "이거 얼마에요?"
+        },
+        {
           "text": "The phrase '밥 먹었어요?' means:",
           "options": ["Where are you going?", "Did you eat?", "Are you tired?", "I'm hungry"],
           "correctAnswer": "Did you eat?"
-        },
-        {
-          "text": "What does '피곤해요' mean?",
-          "options": ["It's raining", "I'm tired", "I love you", "It's fun"],
-          "correctAnswer": "I'm tired"
-        },
-        {
-          "text": "What do you say when you're sleepy?",
-          "options": ["배고파요", "졸려요", "배불러요", "재미있어요"],
-          "correctAnswer": "졸려요"
         }
       ]
     },
@@ -52,14 +67,29 @@
       "name": "K-Pop & Culture",
       "questions": [
         {
-          "text": "In K-pop, what does '막내 (maknae)' mean?",
-          "options": ["Leader", "Main vocalist", "Oldest member", "Youngest member"],
-          "correctAnswer": "Youngest member"
+          "text": "K-pop에서 팬들이 가장 좋아하는 멤버를 지칭할 때 사용하는 용어는 무엇인가요?",
+          "options": ["maknae", "aegyo", "bias", "daebak"],
+          "correctAnswer": "bias"
         },
         {
-          "text": "The word '대박 (daebak)' expresses:",
-          "options": ["It's hot", "Amazing!", "I'm tired", "I miss you"],
-          "correctAnswer": "Amazing!"
+          "text": "한국에서 상대방에게 '행운을 빌어요!'를 말하는 가장 흔한 방법은?",
+          "options": ["대박", "화이팅", "사랑해요", "고마워요"],
+          "correctAnswer": "화이팅"
+        },
+        {
+          "text": "'대박'이라는 한국어 단어가 의미하는 바는 무엇인가요?",
+          "options": ["Jackpot / Amazing", "I'm sorry", "Thank you", "Let's go"],
+          "correctAnswer": "Jackpot / Amazing"
+        },
+        {
+          "text": "'애교'는 K-pop과 한국 문화에서 어떤 행동을 의미하나요?",
+          "options": ["Performing a difficult dance", "Showing a cute or charming personality", "Being the youngest member", "Giving gifts to fans"],
+          "correctAnswer": "Showing a cute or charming personality"
+        },
+        {
+          "text": "K-pop 그룹에서 가장 어린 멤버를 칭하는 용어는 무엇인가요?",
+          "options": ["Leader", "Maknae", "Visual", "Bias"],
+          "correctAnswer": "Maknae"
         }
       ]
     }
