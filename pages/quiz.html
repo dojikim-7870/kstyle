@@ -576,18 +576,17 @@
             border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
         }
-
-        /* 마우스 오버 시 버튼 색상을 명확하게 변경하고, 사라지지 않도록 합니다. */
+        
+        /* 마우스 올릴 때 버튼이 사라지지 않도록 `opacity: 1`과 `visibility: visible`을 `!important`로 강제 적용합니다. */
         .category-btn:hover {
             background-color: var(--secondary-color-dark);
             transform: translateY(-2px);
-            opacity: 1 !important; /* 혹시 모를 다른 스타일 충돌 방지 */
-            visibility: visible !important; /* 혹시 모를 다른 스타일 충돌 방지 */
+            opacity: 1 !important;
+            visibility: visible !important;
         }
-        
-        /* 선택된 버튼의 색상을 변경합니다. */
+
         .category-btn.selected {
             background-color: var(--primary-color);
         }
@@ -600,6 +599,13 @@
         #start-quiz-btn:disabled {
             background-color: #ccc;
             cursor: not-allowed;
+        }
+
+        /* 퀴즈 화면의 너비를 제한하고 중앙 정렬하는 새로운 CSS 규칙 */
+        #quiz-question-view {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .quiz-status {
