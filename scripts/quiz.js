@@ -27,7 +27,8 @@ class KoreanQuiz {
     
     async loadQuestions() {
         try {
-            const response = await fetch('/data/quiz-questions.json');
+            // 파일을 `data` 폴더가 아닌 현재 경로에서 가져오도록 수정했습니다.
+            const response = await fetch('./quiz-questions.json'); 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -70,20 +71,23 @@ class KoreanQuiz {
         }
     
         // Answer selection
-        document.getElementById('answer-options').addEventListener('click', (e) => {
-            if (e.target.matches('.answer-option') && this.isQuizActive) {
-                const selectedAnswer = e.target.dataset.option;
-                this.checkAnswer(selectedAnswer);
-            }
-        });
-
+        const answerOptionsContainer = document.getElementById('answer-options');
+        if (answerOptionsContainer) {
+            answerOptionsContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.answer-option') && this.isQuizActive) {
+                    const selectedAnswer = e.target.dataset.option;
+                    this.checkAnswer(selectedAnswer);
+                }
+            });
+        }
+    
         // Start button
         if (startBtn) {
             startBtn.addEventListener('click', () => {
                 this.startQuiz();
             });
         }
-
+    
         // Restart button
         const restartBtn = document.getElementById('restart-quiz-btn');
         if (restartBtn) {
@@ -92,94 +96,77 @@ class KoreanQuiz {
             });
         }
     }
-
+    
     displayCategories() {
         const categoryContainer = document.getElementById('category-container');
         if (!categoryContainer) return;
-        
         categoryContainer.innerHTML = '';
         if (this.categories.length === 0) {
             categoryContainer.innerHTML = `<p>No quiz categories available.</p>`;
             return;
         }
-
         this.categories.forEach(category => {
             const button = document.createElement('button');
             button.className = 'category-btn';
-            button.dataset.categoryId = category.id;
             button.textContent = category.name;
+            button.dataset.categoryId = category.id;
             categoryContainer.appendChild(button);
         });
     }
 
     selectCategory(categoryId) {
-        // Highlight the selected button
-        document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('selected'));
-        const selectedBtn = document.querySelector(`[data-category-id="${categoryId}"]`);
-        if (selectedBtn) {
-            selectedBtn.classList.add('selected');
-        }
-
-        const category = this.categories.find(c => c.id === categoryId);
-        if (category) {
-            this.selectedCategory = category;
-            document.querySelector('.quiz-category-title').textContent = this.selectedCategory.name;
-            document.getElementById('quiz-intro').style.display = 'none';
-            document.getElementById('quiz-container').style.display = 'block';
+        this.selectedCategory = this.categories.find(cat => cat.id === categoryId);
+        if (this.selectedCategory) {
+            this.questions = this.shuffleArray([...this.selectedCategory.questions]);
+            console.log(`Selected category: ${this.selectedCategory.name}`);
         }
     }
 
     startQuiz() {
         if (!this.selectedCategory) {
+            alert("Please select a quiz category first.");
             return;
         }
-        
-        this.questions = this.selectedCategory.questions;
-        this.questions = this.shuffleArray(this.questions);
-        
+        this.isQuizActive = true;
         this.currentQuestionIndex = 0;
         this.score = 0;
         this.answers = [];
-        this.isQuizActive = true;
-
-        this.updateProgress();
-        this.displayQuestion();
-        this.startTimer();
-
-        document.getElementById('quiz-start').style.display = 'none';
-        document.getElementById('quiz-main').style.display = 'block';
-        document.getElementById('quiz-result').style.display = 'none';
+        document.getElementById('quiz-intro').style.display = 'none';
+        document.getElementById('quiz-question-view').style.display = 'block';
+        this.showQuestion();
     }
-
-    displayQuestion() {
-        if (this.currentQuestionIndex >= this.questions.length) {
+    
+    showQuestion() {
+        this.resetTimer();
+        const currentQuestion = this.questions[this.currentQuestionIndex];
+        if (!currentQuestion) {
             this.endQuiz();
             return;
         }
 
-        const question = this.questions[this.currentQuestionIndex];
-        document.getElementById('question-text').textContent = question.text;
+        document.getElementById('question-text').textContent = currentQuestion.text;
+        const answerOptions = document.getElementById('answer-options');
+        answerOptions.innerHTML = '';
         
-        const optionsContainer = document.getElementById('answer-options');
-        optionsContainer.innerHTML = '';
+        // Shuffle options for each question
+        const shuffledOptions = this.shuffleArray([...currentQuestion.options]);
         
-        const shuffledOptions = this.shuffleArray(question.options);
         shuffledOptions.forEach(option => {
             const button = document.createElement('button');
             button.className = 'answer-option';
-            button.dataset.option = option;
             button.textContent = option;
-            optionsContainer.appendChild(button);
+            button.dataset.option = option;
+            answerOptions.appendChild(button);
         });
-        
-        document.getElementById('feedback').textContent = '';
-        this.updateProgress();
-        this.resetTimer();
-    }
 
+        this.updateQuestionCounter();
+        this.startTimer();
+    }
+    
     checkAnswer(selectedOption) {
         if (!this.isQuizActive) return;
         
+        this.stopTimer();
         const currentQuestion = this.questions[this.currentQuestionIndex];
         const isCorrect = selectedOption === currentQuestion.correctAnswer;
         this.answers.push({
@@ -188,69 +175,79 @@ class KoreanQuiz {
             correctAnswer: currentQuestion.correctAnswer,
             isCorrect: isCorrect
         });
-        
+
         if (isCorrect) {
             this.score++;
         }
         
-        this.stopTimer();
-        this.showFeedback(isCorrect);
-    }
-    
-    showFeedback(isCorrect) {
-        const feedbackDiv = document.getElementById('feedback');
+        // Show immediate feedback
+        const feedbackContainer = document.getElementById('feedback-container');
         if (isCorrect) {
-            feedbackDiv.textContent = "Correct!";
-            feedbackDiv.className = 'correct';
+            feedbackContainer.innerHTML = `<p class="correct-feedback">✅ Correct! The answer is ${currentQuestion.correctAnswer}.</p>`;
         } else {
-            feedbackDiv.textContent = "Incorrect. The correct answer was: " + this.questions[this.currentQuestionIndex].correctAnswer;
-            feedbackDiv.className = 'incorrect';
+            feedbackContainer.innerHTML = `<p class="incorrect-feedback">❌ Incorrect. The correct answer was ${currentQuestion.correctAnswer}.</p>`;
         }
-        document.getElementById('next-btn').style.display = 'block';
+        
+        // Disable answer buttons after selection
+        document.querySelectorAll('.answer-option').forEach(btn => btn.disabled = true);
+        
+        // Wait a moment before moving to the next question
+        setTimeout(() => {
+            feedbackContainer.innerHTML = ''; // Clear feedback
+            this.nextQuestion();
+        }, 1500);
     }
 
     nextQuestion() {
-        document.getElementById('next-btn').style.display = 'none';
+        if (!this.isQuizActive) return;
         this.currentQuestionIndex++;
-        this.displayQuestion();
-        this.startTimer();
+        if (this.currentQuestionIndex < this.questions.length) {
+            this.showQuestion();
+        } else {
+            this.endQuiz();
+        }
     }
-
+    
     endQuiz() {
         this.isQuizActive = false;
         this.stopTimer();
-        document.getElementById('quiz-main').style.display = 'none';
-        document.getElementById('quiz-result').style.display = 'block';
-        
-        document.getElementById('score-display').textContent = `${this.score} / ${this.questions.length}`;
-        this.displayReview();
-    }
+        document.getElementById('quiz-question-view').style.display = 'none';
+        document.getElementById('quiz-results').style.display = 'block';
 
-    displayReview() {
-        const reviewContainer = document.getElementById('review-container');
-        reviewContainer.innerHTML = '';
+        const resultText = document.getElementById('result-text');
+        const totalQuestions = this.questions.length;
+        const resultPercentage = Math.round((this.score / totalQuestions) * 100);
+        resultText.innerHTML = `You scored ${this.score} out of ${totalQuestions} (${resultPercentage}%)`;
         
+        // Display answer breakdown
+        const breakdownList = document.getElementById('breakdown-list');
+        breakdownList.innerHTML = '';
         this.answers.forEach(answer => {
-            const reviewItem = document.createElement('div');
-            reviewItem.className = `review-item ${answer.isCorrect ? 'correct' : 'incorrect'}`;
-            reviewItem.innerHTML = `
-                <p><strong>Question:</strong> ${answer.question}</p>
-                <p><strong>Your Answer:</strong> ${answer.userAnswer}</p>
-                <p><strong>Correct Answer:</strong> ${answer.correctAnswer}</p>
+            const listItem = document.createElement('li');
+            listItem.className = answer.isCorrect ? 'correct-answer-item' : 'incorrect-answer-item';
+            listItem.innerHTML = `
+                <strong>Q:</strong> ${answer.question}<br>
+                <strong>Your Answer:</strong> ${answer.userAnswer}<br>
+                <strong>Correct Answer:</strong> ${answer.correctAnswer}
             `;
-            reviewContainer.appendChild(reviewItem);
+            breakdownList.appendChild(listItem);
         });
     }
 
     restartQuiz() {
-        document.getElementById('quiz-result').style.display = 'none';
+        document.getElementById('quiz-results').style.display = 'none';
         document.getElementById('quiz-intro').style.display = 'block';
-        document.getElementById('quiz-container').style.display = 'none';
+        const startBtn = document.getElementById('start-quiz-btn');
+        if (startBtn) {
+            startBtn.disabled = true;
+        }
+        this.selectedCategory = null;
     }
 
-    updateProgress() {
-        const progressDisplay = document.getElementById('progress-display');
-        progressDisplay.textContent = `Question ${this.currentQuestionIndex + 1} of ${this.questions.length}`;
+    updateQuestionCounter() {
+        const counterElement = document.getElementById('question-counter');
+        if (!counterElement) return;
+        counterElement.textContent = `Question ${this.currentQuestionIndex + 1} of ${this.questions.length}`;
     }
 
     startTimer() {
@@ -289,13 +286,15 @@ class KoreanQuiz {
         document.getElementById('quiz-intro').style.display = 'none';
         document.getElementById('quiz-container').innerHTML = `
             <div class="error-message-container">
-                <p>Error loading quiz data. Please check your internet connection and the 'quiz-questions.json' file.</p>
+                <p>Error loading quiz data. Please check your internet connection and the 'quiz-questions.json' file path.</p>
                 <p>Details: ${error.message}</p>
             </div>
         `;
+        console.error("Quiz initialization error:", error);
     }
 }
 
+// Instantiate the quiz
 document.addEventListener('DOMContentLoaded', () => {
     new KoreanQuiz();
 });
