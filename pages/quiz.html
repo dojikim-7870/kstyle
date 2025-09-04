@@ -8,19 +8,15 @@
     <meta name="keywords" content="Korean quiz, Korean test, Korean language quiz, K-pop quiz, Korean vocabulary test, Korean grammar quiz">
     <meta name="author" content="K-Style Learning">
     
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Korean Quiz - Interactive Language Learning Tests">
     <meta property="og:description" content="Test your Korean language skills with interactive quizzes and track your progress">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kstyle.site/pages/quiz.html">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎵%3C/text%3E%3C/svg%3E">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="../styles/main.css">
     
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -33,7 +29,6 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -68,9 +63,7 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="main" id="main-content">
-        <!-- Page Header -->
         <section class="page-hero">
             <div class="container">
                 <div class="page-hero-content">
@@ -83,20 +76,47 @@
             </div>
         </section>
 
-        <!-- Quiz Container -->
         <section class="lesson-section">
             <div class="container">
                 <div id="quiz-container">
-                    <!-- Quiz content will be loaded here by JavaScript -->
-                    <div class="loading-state">
-                        <h2>Loading Korean Quiz...</h2>
-                        <p>Please wait while we prepare your quiz questions.</p>
+                    <div id="quiz-intro">
+                        <h2>Select a Quiz Category</h2>
+                        <p>Choose from the available categories below to start your quiz.</p>
+                        <div id="category-container" class="category-buttons">
+                            </div>
+                        <button id="start-quiz-btn" class="btn btn-primary" disabled>Start Quiz</button>
+                    </div>
+
+                    <div id="quiz-question-view" style="display: none;">
+                        <h3 id="quiz-category-title"></h3>
+                        <div class="quiz-status">
+                            <span id="question-counter"></span>
+                            <span id="timer-display" class="quiz-timer"></span>
+                        </div>
+                        <div class="question-card">
+                            <p id="question-text"></p>
+                            <div id="answer-options" class="answer-grid">
+                                </div>
+                        </div>
+                        <div id="feedback-container"></div>
+                        <button id="next-btn" class="btn btn-secondary" style="display: none;">Next Question</button>
+                    </div>
+
+                    <div id="quiz-results" style="display: none;">
+                        <h2>Quiz Results</h2>
+                        <p>You have completed the quiz. Here are your results.</p>
+                        <p id="result-text" class="score-display"></p>
+                        <div class="review-answers">
+                            <h3>Review Your Answers</h3>
+                            <ul id="breakdown-list" class="answer-breakdown">
+                                </ul>
+                        </div>
+                        <button id="restart-quiz-btn" class="btn btn-primary">Restart Quiz</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Quiz Features Section -->
         <section class="lesson-section quiz-features">
             <div class="container">
                 <h2 class="section-title">Quiz Features</h2>
@@ -141,7 +161,6 @@
             </div>
         </section>
 
-        <!-- Quiz Categories Preview -->
         <section class="lesson-section categories-preview">
             <div class="container">
                 <h2 class="section-title">Available Quiz Categories</h2>
@@ -211,7 +230,6 @@
             </div>
         </section>
 
-        <!-- Study Tips Section -->
         <section class="lesson-section study-tips">
             <div class="container">
                 <h2 class="section-title">Quiz Study Tips</h2>
@@ -240,7 +258,6 @@
             </div>
         </section>
 
-        <!-- Related Resources Section -->
         <section class="lesson-section related-resources">
             <div class="container">
                 <h2 class="section-title">Enhance Your Learning</h2>
@@ -268,7 +285,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -309,241 +325,10 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../scripts/main.js"></script>
     <script src="../scripts/quiz.js"></script>
     
-    <!-- Page-specific styles -->
     <style>
         .page-hero {
             background: var(--gradient-primary);
             color: white;
-            padding: 100px 0 60px;
-            margin-top: 80px;
-        }
-        
-        .page-hero-content {
-            text-align: center;
-        }
-        
-        .page-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .page-breadcrumb {
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-        
-        .page-breadcrumb a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .lesson-section {
-            padding: 60px 0;
-        }
-        
-        .lesson-section:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .loading-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #666;
-        }
-        
-        .loading-state h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .quiz-features {
-            background: white;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            border-top: 4px solid var(--primary-color);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .categories-preview {
-            background: #f8f9fa;
-        }
-        
-        .section-intro {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .category-preview {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .category-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .category-preview h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .category-preview p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-        
-        .category-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .stat {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .difficulty {
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: white;
-        }
-        
-        .difficulty.beginner {
-            background: #2ecc71;
-        }
-        
-        .difficulty.intermediate {
-            background: #f39c12;
-        }
-        
-        .difficulty.advanced {
-            background: #e74c3c;
-        }
-        
-        .difficulty.all {
-            background: #9b59b6;
-        }
-        
-        .study-tips {
-            background: white;
-        }
-        
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tip-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .tip-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .related-resources {
-            background: var(--light-color);
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .resource-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .resource-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .resource-card p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-        
-        @media (max-width: 768px) {
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .resources-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</body>
-</html>
