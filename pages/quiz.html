@@ -73,7 +73,8 @@
                         <a href="../index.html">Home</a> > <span>Quiz</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <section class="lesson-section">
             <div class="container">
@@ -328,6 +329,7 @@
     <script src="../scripts/quiz.js"></script>
     
     <style>
+        /* 기존 스타일은 그대로 유지합니다 */
         .page-hero {
             background: var(--gradient-primary);
             color: white;
@@ -574,13 +576,18 @@
             border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .category-btn:hover {
-            background-color: var(--secondary-color-dark);
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
+        /* 마우스 오버 시 버튼 색상을 명확하게 변경하고, 사라지지 않도록 합니다. */
+        .category-btn:hover {
+            background-color: var(--secondary-color-dark);
+            transform: translateY(-2px);
+            opacity: 1 !important; /* 혹시 모를 다른 스타일 충돌 방지 */
+            visibility: visible !important; /* 혹시 모를 다른 스타일 충돌 방지 */
+        }
+        
+        /* 선택된 버튼의 색상을 변경합니다. */
         .category-btn.selected {
             background-color: var(--primary-color);
         }
