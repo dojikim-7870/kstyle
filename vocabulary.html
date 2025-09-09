@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Vocabulary - Interactive Word Lists & Study Tools | K-Style Learning</title>
+    <meta name="description" content="Expand your Korean vocabulary with categorized word lists, interactive study tools, and K-pop terminology. Perfect for building Korean language skills.">
+    <meta name="keywords" content="Korean vocabulary, Korean words, Korean study, Korean dictionary, K-pop vocabulary, learn Korean words">
+    <meta name="author" content="K-Style Learning">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Korean Vocabulary - Interactive Word Lists & Study Tools">
+    <meta property="og:description" content="Expand your Korean vocabulary with categorized word lists and interactive study tools">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kstyle.site/pages/vocabulary.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎵%3C/text%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Korean Vocabulary Study",
+        "description": "Interactive Korean vocabulary learning with categorized word lists and study tools",
+        "educationalLevel": "All Levels",
+        "teaches": "Korean Vocabulary"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="../index.html">
+                        <span class="brand-icon">🎵</span>
+                        <span class="brand-text">K-Style Learning</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Lessons <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="basics.html">Korean Basics</a></li>
+                            <li><a href="grammar.html">Grammar Guide</a></li>
+                            <li><a href="vocabulary.html" class="active">Vocabulary</a></li>
+                            <li><a href="culture.html">Korean Culture</a></li>
+                            <li><a href="pronunciation.html">Pronunciation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="phrase-generator.html" class="nav-link">Phrases</a></li>
+                    <li><a href="lyrics.html" class="nav-link">K-pop Lyrics</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Page Header -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Korean Vocabulary</h1>
+                    <p>Build your Korean word bank with interactive vocabulary lists and study tools</p>
+                    <div class="page-breadcrumb">
+                        <a href="../index.html">Home</a> > <span>Vocabulary</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Table Section -->
+        <section class="lesson-section">
+            <div class="container">
+                <div id="vocabulary-container">
+                    <!-- Vocabulary content will be loaded here by JavaScript -->
+                    <div class="loading-state">
+                        <h2>Loading Korean Vocabulary...</h2>
+                        <p>Please wait while we load the vocabulary database.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tips Section -->
+        <section class="lesson-section study-tips">
+            <div class="container">
+                <h2 class="section-title">Vocabulary Study Tips</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🧠</div>
+                        <h3>Spaced Repetition</h3>
+                        <p>Review words at increasing intervals. Start with daily review, then every few days, then weekly. This helps move words from short-term to long-term memory.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">📝</div>
+                        <h3>Use Context</h3>
+                        <p>Don't just memorize isolated words. Learn them in sentences and phrases. This helps you understand how words are actually used in Korean.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🎵</div>
+                        <h3>K-pop Connection</h3>
+                        <p>Look for vocabulary words in your favorite K-pop songs. Music makes memorization easier and more enjoyable!</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🔊</div>
+                        <h3>Practice Pronunciation</h3>
+                        <p>Always learn pronunciation along with meaning. Practice saying new words out loud to improve your speaking skills.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">📱</div>
+                        <h3>Daily Practice</h3>
+                        <p>Set aside 10-15 minutes daily for vocabulary review. Consistency is more important than long study sessions.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h3>Set Goals</h3>
+                        <p>Learn 5-10 new words per day. Focus on high-frequency words and terms relevant to your interests in Korean culture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Categories Preview -->
+        <section class="lesson-section categories-preview">
+            <div class="container">
+                <h2 class="section-title">Vocabulary Categories</h2>
+                <p class="section-intro">Our vocabulary is organized into helpful categories to make learning more structured and efficient.</p>
+                
+                <div class="categories-grid">
+                    <div class="category-preview">
+                        <div class="category-icon">👋</div>
+                        <h3>Basic Greetings</h3>
+                        <p>Essential greetings and polite expressions for daily conversation.</p>
+                        <div class="category-examples">
+                            <span>안녕하세요</span>
+                            <span>감사합니다</span>
+                            <span>죄송해요</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Family Members</h3>
+                        <p>Words for family relationships and family-related terms.</p>
+                        <div class="category-examples">
+                            <span>가족</span>
+                            <span>어머니</span>
+                            <span>아버지</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🔢</div>
+                        <h3>Numbers</h3>
+                        <p>Korean native and Sino-Korean number systems.</p>
+                        <div class="category-examples">
+                            <span>하나</span>
+                            <span>둘</span>
+                            <span>셋</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🍚</div>
+                        <h3>Food & Drinks</h3>
+                        <p>Korean cuisine and dining-related vocabulary.</p>
+                        <div class="category-examples">
+                            <span>김치</span>
+                            <span>비빔밥</span>
+                            <span>물</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🎤</div>
+                        <h3>K-pop Terms</h3>
+                        <p>Essential vocabulary for K-pop fans and Korean entertainment.</p>
+                        <div class="category-examples">
+                            <span>아이돌</span>
+                            <span>팬</span>
+                            <span>콘서트</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🎨</div>
+                        <h3>Colors</h3>
+                        <p>Color names and color-related adjectives.</p>
+                        <div class="category-examples">
+                            <span>빨간색</span>
+                            <span>파란색</span>
+                            <span>노란색</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">⏰</div>
+                        <h3>Time</h3>
+                        <p>Time expressions, days, months, and temporal vocabulary.</p>
+                        <div class="category-examples">
+                            <span>오늘</span>
+                            <span>어제</span>
+                            <span>내일</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">🌤️</div>
+                        <h3>Weather</h3>
+                        <p>Weather conditions and seasonal vocabulary.</p>
+                        <div class="category-examples">
+                            <span>날씨</span>
+                            <span>비</span>
+                            <span>눈</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-preview">
+                        <div class="category-icon">😊</div>
+                        <h3>Emotions</h3>
+                        <p>Feelings, emotions, and psychological states.</p>
+                        <div class="category-examples">
+                            <span>행복</span>
+                            <span>사랑</span>
+                            <span>슬픔</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Methods Section -->
+        <section class="lesson-section study-methods">
+            <div class="container">
+                <h2 class="section-title">How to Use Our Vocabulary Tools</h2>
+                
+                <div class="methods-grid">
+                    <div class="method-card">
+                        <div class="method-step">1</div>
+                        <h3>Browse & Filter</h3>
+                        <p>Use the search and filter options to find words by category, difficulty level, or specific terms you want to learn.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-step">2</div>
+                        <h3>Study Mode</h3>
+                        <p>Enter study mode to practice with flashcards. Test yourself on Korean to English or English to Korean translations.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-step">3</div>
+                        <h3>Track Progress</h3>
+                        <p>Use the quiz system to test your vocabulary knowledge and track your improvement over time.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-step">4</div>
+                        <h3>Apply Knowledge</h3>
+                        <p>Practice using new vocabulary in context with our phrase generator and K-pop lyrics analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="lesson-section practice-section">
+            <div class="container">
+                <h2 class="section-title">Practice Your Vocabulary</h2>
+                
+                <div class="practice-grid">
+                    <div class="practice-card">
+                        <h3>🧠 Vocabulary Quiz</h3>
+                        <p>Test your knowledge with multiple-choice questions covering all vocabulary categories.</p>
+                        <a href="quiz.html?category=basic-vocab" class="btn btn-primary">Take Vocabulary Quiz</a>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3>📝 Phrase Practice</h3>
+                        <p>See vocabulary in action with our Korean phrase generator and examples.</p>
+                        <a href="phrase-generator.html" class="btn btn-secondary">Practice with Phrases</a>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3>🎵 K-pop Integration</h3>
+                        <p>Learn vocabulary through K-pop lyrics with translations and explanations.</p>
+                        <a href="lyrics.html" class="btn btn-outline">Study Song Lyrics</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Goals Section -->
+        <section class="lesson-section vocabulary-goals">
+            <div class="container">
+                <h2 class="section-title">Vocabulary Learning Goals</h2>
+                
+                <div class="goals-grid">
+                    <div class="goal-card beginner">
+                        <h3>Beginner (300 words)</h3>
+                        <div class="goal-description">
+                            <p>Master essential everyday vocabulary for basic communication.</p>
+                        </div>
+                        <div class="goal-focus">
+                            <h4>Focus Areas:</h4>
+                            <ul>
+                                <li>Greetings and politeness</li>
+                                <li>Family and relationships</li>
+                                <li>Numbers and time</li>
+                                <li>Basic adjectives</li>
+                                <li>Common verbs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card intermediate">
+                        <h3>Intermediate (1000 words)</h3>
+                        <div class="goal-description">
+                            <p>Expand vocabulary for more complex conversations and K-pop understanding.</p>
+                        </div>
+                        <div class="goal-focus">
+                            <h4>Focus Areas:</h4>
+                            <ul>
+                                <li>Emotions and feelings</li>
+                                <li>K-pop and entertainment</li>
+                                <li>Daily activities</li>
+                                <li>School and work</li>
+                                <li>Hobbies and interests</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card advanced">
+                        <h3>Advanced (3000+ words)</h3>
+                        <div class="goal-description">
+                            <p>Achieve fluency-level vocabulary for nuanced communication.</p>
+                        </div>
+                        <div class="goal-focus">
+                            <h4>Focus Areas:</h4>
+                            <ul>
+                                <li>Abstract concepts</li>
+                                <li>Cultural nuances</li>
+                                <li>Professional terminology</li>
+                                <li>Literary expressions</li>
+                                <li>Regional variations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>K-Style Learning</h3>
+                    <p>Your gateway to Korean language and K-pop culture. Learn, practice, and immerse yourself in the beautiful Korean language.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn Korean</h4>
+                    <ul>
+                        <li><a href="basics.html">Korean Basics</a></li>
+                        <li><a href="grammar.html">Grammar Guide</a></li>
+                        <li><a href="vocabulary.html">Vocabulary</a></li>
+                        <li><a href="pronunciation.html">Pronunciation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Interactive Tools</h4>
+                    <ul>
+                        <li><a href="quiz.html">Korean Quiz</a></li>
+                        <li><a href="phrase-generator.html">Phrase Generator</a></li>
+                        <li><a href="lyrics.html">K-pop Lyrics</a></li>
+                        <li><a href="culture.html">Korean Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 K-Style Learning. All rights reserved. Made with ❤️ for K-pop fans worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/vocabulary.js"></script>
+    
+    <!-- Page-specific styles -->
+    <style>
+        .page-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 60px;
+            margin-top: 80px;
+        }
+        
+        .page-hero-content {
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .page-breadcrumb {
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .page-breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .lesson-section {
+            padding: 60px 0;
+        }
+        
+        .lesson-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .loading-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+        
+        .loading-state h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .study-tips {
+            background: white;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .tip-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .categories-preview {
+            background: #f8f9fa;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .category-preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .category-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-preview h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .category-preview p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .category-examples {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-examples span {
+            background: var(--gradient-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .study-methods {
+            background: white;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .method-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .method-step {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .method-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .practice-section {
+            background: var(--light-color);
+        }
+        
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .practice-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .vocabulary-goals {
+            background: white;
+        }
+        
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .goal-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid;
+        }
+        
+        .goal-card.beginner {
+            border-color: #2ecc71;
+        }
+        
+        .goal-card.intermediate {
+            border-color: #f39c12;
+        }
+        
+        .goal-card.advanced {
+            border-color: #e74c3c;
+        }
+        
+        .goal-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .goal-card.beginner h3 {
+            color: #2ecc71;
+        }
+        
+        .goal-card.intermediate h3 {
+            color: #f39c12;
+        }
+        
+        .goal-card.advanced h3 {
+            color: #e74c3c;
+        }
+        
+        .goal-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .goal-focus h4 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .goal-focus ul {
+            text-align: left;
+            margin-left: 1.5rem;
+        }
+        
+        .goal-focus li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
