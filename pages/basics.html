@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,8 +27,145 @@
         "teaches": "Korean Language"
     }
     </script>
-<link rel="stylesheet" href="../styles/main.css">
-<link rel="stylesheet" href="../styles/mobile.css">
+    <style>
+        /* 모바일 최적화 스타일 추가 */
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 80px 0 40px;
+                margin-top: 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            /* 햄버거 메뉴를 위한 스타일 */
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                cursor: pointer;
+            }
+
+            .nav-toggle span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: var(--dark-color);
+                margin: 5px 0;
+                transition: var(--transition);
+            }
+            
+            .nav-toggle.toggle-active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .nav-toggle.toggle-active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.toggle-active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: var(--shadow-light);
+                flex-direction: column;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 999;
+                height: calc(100vh - 60px);
+                padding-top: 2rem;
+            }
+            
+            .nav-menu.nav-menu-active {
+                transform: translateX(0);
+            }
+            
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                display: block;
+            }
+            
+            .nav-dropdown .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                display: none;
+            }
+            
+            .nav-dropdown:hover .dropdown-menu {
+                display: none; /* 모바일에서는 hover 비활성화 */
+            }
+            
+            .nav-dropdown > .nav-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .nav-dropdown .dropdown-arrow {
+                display: none;
+            }
+            
+            .hangul-characters {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 0.75rem;
+            }
+            
+            .hangul-char {
+                font-size: 1.5rem;
+            }
+            
+            .phrases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phrase-card {
+                padding: 1.5rem;
+            }
+            
+            .phrase-korean {
+                font-size: 1.3rem;
+            }
+            
+            .numbers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            }
+            
+            .practice-grid, .next-steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-section {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -634,7 +772,5 @@
             navToggle.classList.toggle('toggle-active');
         });
     </script>
-    
-    
 </body>
 </html>
