@@ -17,47 +17,136 @@
     
     <link rel="stylesheet" href="../styles/main.css">
     
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Korean Basics Lesson",
+        "description": "Learn Korean alphabet Hangul and essential phrases for beginners",
+        "educationalLevel": "Beginner",
+        "teaches": "Korean Language"
+    }
+    </script>
     <style>
         :root {
-            --primary-color: #f06292;
-            --secondary-color: #ff9e80;
-            --accent-color: #4fc3f7;
+            --primary-color: #ff6b6b;
+            --secondary-color: #48dbfb;
             --dark-color: #333;
             --light-color: #f4f4f4;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 8px 12px rgba(0, 0, 0, 0.15);
+            --text-color: #555;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
-            --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        /* Basic Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: var(--font-family);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-color);
-            color: var(--dark-color);
+            color: var(--text-color);
+            background-color: #fff;
         }
 
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header & Navigation */
         .header {
-            background-color: white;
-            box-shadow: var(--shadow-light);
-            position: sticky;
+            background: white;
+            color: var(--dark-color);
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
         }
 
         .nav {
-            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem;
         }
 
         .nav-brand {
@@ -68,23 +157,16 @@
         }
 
         .nav-brand a {
-            text-decoration: none;
-            color: var(--dark-color);
-            display: flex;
-            align-items: center;
+            color: inherit;
         }
 
         .brand-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-right: 0.5rem;
         }
 
         .nav-menu {
             display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            transition: var(--transition);
         }
 
         .nav-menu li {
@@ -92,248 +174,222 @@
         }
 
         .nav-link {
+            padding: 0 1rem;
             display: block;
-            padding: 0.75rem 1rem;
-            text-decoration: none;
+            line-height: 60px;
             color: var(--dark-color);
-            font-weight: bold;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: var(--transition);
         }
 
         .nav-link:hover, .nav-link.active {
             color: var(--primary-color);
         }
 
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
+        .nav-dropdown .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background-color: white;
             box-shadow: var(--shadow-light);
-            list-style: none;
+            border-radius: 5px;
+            min-width: 180px;
             padding: 0.5rem 0;
-            margin: 0;
-            min-width: 150px;
-            z-index: 10;
-            border-radius: 4px;
         }
 
         .nav-dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        .dropdown-menu a {
-            display: block;
+        .nav-dropdown .dropdown-menu a {
+            line-height: 1.5;
             padding: 0.75rem 1rem;
-            text-decoration: none;
-            color: var(--dark-color);
-            transition: background-color 0.2s ease;
+            display: block;
+            color: var(--text-color);
         }
 
-        .dropdown-menu a:hover, .dropdown-menu a.active {
+        .nav-dropdown .dropdown-menu a:hover {
             background-color: var(--light-color);
-            color: var(--primary-color);
         }
-        
-        /* Mobile menu specific styles */
+
         .nav-toggle {
             display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
+            background: none;
             border: none;
             cursor: pointer;
-            padding: 0;
+            padding: 0.5rem;
         }
-
+        
         .nav-toggle span {
             display: block;
-            width: 100%;
+            width: 25px;
             height: 3px;
             background-color: var(--dark-color);
-            border-radius: 3px;
+            margin: 5px 0;
             transition: var(--transition);
         }
-        
-        .nav-toggle.toggle-active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
 
-        .nav-toggle.toggle-active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.toggle-active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-        
-        .nav-menu-active {
-            transform: translateX(0) !important;
+        /* Main Content */
+        .main {
+            padding-top: 60px;
         }
 
         .page-hero {
             background: var(--gradient-primary);
             color: white;
-            text-align: center;
             padding: 4rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 30vh;
+            text-align: center;
         }
 
         .page-hero-content {
-            max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
 
         .page-hero h1 {
-            font-size: 3rem;
+            color: white;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .page-hero p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
         }
 
         .page-breadcrumb {
-            margin-top: 1rem;
             font-size: 0.9rem;
             opacity: 0.8;
         }
 
         .page-breadcrumb a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .page-breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .main {
-            padding: 2rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .container {
-            padding: 0 1rem;
+            color: inherit;
         }
 
         .lesson-section {
-            background-color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
+            padding: 4rem 0;
         }
 
         .section-title {
             text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 60px;
             height: 4px;
             background: var(--gradient-primary);
-            margin: 0.5rem auto 0;
+            margin: 1rem auto 0;
             border-radius: 2px;
         }
-        
+
+        .lesson-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
         .hangul-grid {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
+            flex-direction: column;
+            gap: 3rem;
         }
 
-        .hangul-category {
+        .hangul-section {
             background-color: var(--light-color);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1 1 300px;
-            min-width: 280px;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
         }
 
-        .hangul-category h3 {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+        .hangul-section h3 {
             margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .section-description {
+            color: #888;
+            margin-bottom: 1.5rem;
         }
 
         .hangul-characters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 1rem;
         }
 
         .hangul-char-card {
-            background-color: white;
+            background: white;
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
 
         .hangul-char-card:hover {
             transform: translateY(-3px);
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), var(--shadow-light);
+            box-shadow: var(--shadow-medium);
         }
 
         .hangul-char {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--dark-color);
+            color: var(--primary-color);
         }
 
-        .hangul-romanization {
-            font-size: 1rem;
-            color: #777;
-            margin-top: 0.25rem;
+        .hangul-sound {
+            font-style: italic;
+            color: #888;
         }
 
-        .phrase-section {
+        .hangul-example {
+            margin-top: 0.5rem;
+        }
+
+        .hangul-char-card button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .hangul-tip {
+            background-color: #e6f7ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 1.5rem;
             margin-top: 2rem;
+            border-radius: 5px;
         }
-        
+
+        .hangul-tip h4 {
+            color: #006080;
+            margin-bottom: 0.5rem;
+        }
+
         .phrases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .phrase-card {
-            background-color: var(--light-color);
-            padding: 1.5rem;
-            border-left: 5px solid var(--secondary-color);
-            border-radius: 8px;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
             box-shadow: var(--shadow-light);
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .phrase-card:hover {
@@ -342,84 +398,120 @@
         }
 
         .phrase-korean {
-            font-size: 1.25rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: var(--dark-color);
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
         .phrase-romanization {
             font-style: italic;
-            color: #666;
-            font-size: 0.9rem;
+            color: #888;
             margin-bottom: 1rem;
         }
 
         .phrase-english {
-            font-size: 1rem;
-            color: #555;
-            margin-top: auto;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
-        .phrase-audio {
-            margin-top: 1rem;
+        .phrase-usage {
+            font-size: 0.9rem;
+            color: #666;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: var(--transition);
-            text-align: center;
-            cursor: pointer;
+        .lesson-tip {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 5px;
         }
 
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
+        .lesson-tip h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
         }
 
-        .btn-primary:hover {
-            box-shadow: var(--shadow-medium);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-        }
-
-        .btn-secondary:hover {
-            background-color: #42a5f5;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .next-steps-grid {
+        .numbers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
             text-align: center;
         }
 
+        .number-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .number-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .number-digit {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .number-korean {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .number-romanization {
+            font-style: italic;
+            color: #888;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .practice-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .practice-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .practice-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .next-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
         .next-step-card {
-            background-color: var(--light-color);
+            background: var(--light-color);
             padding: 2rem;
             border-radius: 8px;
             text-align: center;
@@ -428,12 +520,12 @@
             text-decoration: none;
             color: inherit;
         }
-        
+
         .next-step-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-medium);
         }
-        
+
         .step-number {
             width: 50px;
             height: 50px;
@@ -448,70 +540,143 @@
             margin: 0 auto 1rem;
         }
 
+        /* Footer */
         .footer {
             background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 2rem 0;
-            text-align: center;
+            color: white;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
         }
 
-        .footer a {
-            color: var(--light-color);
-            text-decoration: none;
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
-        .footer a:hover {
+        .footer-section {
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3, .footer-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+        }
+
+        .footer-section ul {
+            padding-left: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
             text-decoration: underline;
         }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+        }
         
+        /* 반응형 디자인을 위한 모바일 최적화 CSS */
         @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                cursor: pointer;
+            }
+
+            .nav-toggle.toggle-active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .nav-toggle.toggle-active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.toggle-active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
             .nav-menu {
+                display: none; /* 모바일 기본 상태: 숨김 */
                 flex-direction: column;
-                position: fixed;
-                top: 60px; /* Adjust based on header height */
-                right: 0;
-                width: 70%;
-                height: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
                 background-color: white;
-                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-                transform: translateX(100%);
-                padding: 1rem;
+                box-shadow: var(--shadow-light);
+                z-index: 999;
+                height: calc(100vh - 60px);
+                padding-top: 2rem;
+            }
+            
+            .nav-menu.nav-menu-active {
+                display: flex; /* 활성화 시 보임 */
             }
             
             .nav-menu li {
                 width: 100%;
-                text-align: left;
-            }
-
-            .nav-menu .nav-link {
-                padding: 1rem;
-                border-bottom: 1px solid var(--light-color);
+                text-align: center;
+                border-bottom: 1px solid #eee;
             }
             
-            .nav-toggle {
-                display: flex;
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                display: block;
+            }
+            
+            .nav-dropdown .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                display: none;
             }
             
             .nav-dropdown:hover .dropdown-menu {
+                display: none; /* 모바일에서는 hover 비활성화 */
+            }
+            
+            .nav-dropdown > .nav-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .nav-dropdown .dropdown-arrow {
                 display: none;
             }
 
-            .page-hero h1 {
-                font-size: 2.5rem;
+            .hangul-characters, .numbers-grid, .phrases-grid, .practice-grid, .next-steps-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Korean Basics",
-        "description": "Essential Korean language lessons for beginners, including Hangul alphabet and basic conversation",
-        "educationalLevel": "Beginner",
-        "teaches": "Korean Language"
-    }
-    </script>
 </head>
 <body>
     <header class="header">
@@ -553,220 +718,479 @@
             <div class="container">
                 <div class="page-hero-content">
                     <h1>Korean Basics</h1>
-                    <p>Start your journey with Hangul and essential phrases</p>
+                    <p>Master the fundamentals of Korean language - from Hangul alphabet to essential phrases</p>
                     <div class="page-breadcrumb">
                         <a href="../index.html">Home</a> > <span>Korean Basics</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </section><section class="lesson-section">
+    <div class="container">
+        <h2 class="section-title">Hangul Alphabet (한글)</h2>
+        <div class="lesson-intro">
+            <p>Hangul is the Korean writing system created by King Sejong in 1443. It's considered one of the most logical and easy-to-learn writing systems in the world. Unlike Chinese characters, Hangul is phonetic, meaning each symbol represents a sound.</p>
+        </div>
 
-        <section class="lesson-section hangul-section">
-            <div class="container">
-                <h2 class="section-title">Learn Hangul (한글)</h2>
-                <div class="lesson-intro">
-                    <p>Hangul is the Korean alphabet. It is one of the most scientific and easy-to-learn writing systems in the world. Mastering it is the first step to fluency!</p>
+        <div class="hangul-grid">
+            <div class="hangul-section">
+                <h3>Basic Consonants (자음)</h3>
+                <p class="section-description">Korean consonants have different sounds depending on their position in a word. We've included some tips below!</p>
+                <div class="hangul-characters">
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄱ</div>
+                        <div class="hangul-sound">g/k</div>
+                        <div class="hangul-example">가 (ga)</div>
+                        <button onclick="playAudio('audio/g.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄴ</div>
+                        <div class="hangul-sound">n</div>
+                        <div class="hangul-example">나 (na)</div>
+                        <button onclick="playAudio('audio/n.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄷ</div>
+                        <div class="hangul-sound">d/t</div>
+                        <div class="hangul-example">다 (da)</div>
+                        <button onclick="playAudio('audio/d.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄹ</div>
+                        <div class="hangul-sound">r/l</div>
+                        <div class="hangul-example">라 (ra)</div>
+                        <button onclick="playAudio('audio/r.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅁ</div>
+                        <div class="hangul-sound">m</div>
+                        <div class="hangul-example">마 (ma)</div>
+                        <button onclick="playAudio('audio/m.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅂ</div>
+                        <div class="hangul-sound">b/p</div>
+                        <div class="hangul-example">바 (ba)</div>
+                        <button onclick="playAudio('audio/b.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅅ</div>
+                        <div class="hangul-sound">s</div>
+                        <div class="hangul-example">사 (sa)</div>
+                        <button onclick="playAudio('audio/s.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅇ</div>
+                        <div class="hangul-sound">ng/silent</div>
+                        <div class="hangul-example">아 (a)</div>
+                        <button onclick="playAudio('audio/e.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅈ</div>
+                        <div class="hangul-sound">j</div>
+                        <div class="hangul-example">자 (ja)</div>
+                        <button onclick="playAudio('audio/gi.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅊ</div>
+                        <div class="hangul-sound">ch</div>
+                        <div class="hangul-example">차 (cha)</div>
+                        <button onclick="playAudio('audio/chi.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅋ</div>
+                        <div class="hangul-sound">k</div>
+                        <div class="hangul-example">카 (ka)</div>
+                        <button onclick="playAudio('audio/ki.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅌ</div>
+                        <div class="hangul-sound">t</div>
+                        <div class="hangul-example">타 (ta)</div>
+                        <button onclick="playAudio('audio/ti.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅍ</div>
+                        <div class="hangul-sound">p</div>
+                        <div class="hangul-example">파 (pa)</div>
+                        <button onclick="playAudio('audio/pi.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅎ</div>
+                        <div class="hangul-sound">h</div>
+                        <div class="hangul-example">하 (ha)</div>
+                        <button onclick="playAudio('audio/hi.mp3')">▶️</button>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="hangul-section">
+                <h3>Double Consonants (겹자음)</h3>
+                <p class="section-description">Double consonants are a combination of two identical consonants, producing a stronger and more emphasized sound.</p>
+                <div class="hangul-characters">
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄲ</div>
+                        <div class="hangul-sound">kk</div>
+                        <div class="hangul-example">까마귀 (kkamagwi)</div>
+                        <button onclick="playAudio('audio/sg.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㄸ</div>
+                        <div class="hangul-sound">tt</div>
+                        <div class="hangul-example">따뜻하다 (ttatteuthada)</div>
+                        <button onclick="playAudio('audio/sd.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅃ</div>
+                        <div class="hangul-sound">pp</div>
+                        <div class="hangul-example">빠르다 (ppareuda)</div>
+                        <button onclick="playAudio('audio/sb.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅆ</div>
+                        <div class="hangul-sound">ss</div>
+                        <div class="hangul-example">쓰다 (sseuda)</div>
+                        <button onclick="playAudio('audio/ss.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅉ</div>
+                        <div class="hangul-sound">jj</div>
+                        <div class="hangul-example">짜다 (jjada)</div>
+                        <button onclick="playAudio('audio/sgi.mp3')">▶️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hangul-section">
+                <h3>Basic Vowels (모음)</h3>
+                <p class="section-description">Korean vowels are easy to learn. They are typically pronounced consistently!</p>
+                <div class="hangul-characters">
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅏ</div>
+                        <div class="hangul-sound">a</div>
+                        <div class="hangul-example">아 (a)</div>
+                        <button onclick="playAudio('audio/a.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅑ</div>
+                        <div class="hangul-sound">ya</div>
+                        <div class="hangul-example">야 (ya)</div>
+                        <button onclick="playAudio('audio/ya.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅓ</div>
+                        <div class="hangul-sound">eo</div>
+                        <div class="hangul-example">어 (eo)</div>
+                        <button onclick="playAudio('audio/eo.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅕ</div>
+                        <div class="hangul-sound">yeo</div>
+                        <div class="hangul-example">여 (yeo)</div>
+                        <button onclick="playAudio('audio/yeo.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅗ</div>
+                        <div class="hangul-sound">o</div>
+                        <div class="hangul-example">오 (o)</div>
+                        <button onclick="playAudio('audio/o.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅛ</div>
+                        <div class="hangul-sound">yo</div>
+                        <div class="hangul-example">요 (yo)</div>
+                        <button onclick="playAudio('audio/yo.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅜ</div>
+                        <div class="hangul-sound">u</div>
+                        <div class="hangul-example">우 (u)</div>
+                        <button onclick="playAudio('audio/uoo.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅠ</div>
+                        <div class="hangul-sound">yu</div>
+                        <div class="hangul-example">유 (yu)</div>
+                        <button onclick="playAudio('audio/yoo.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅡ</div>
+                        <div class="hangul-sound">eu</div>
+                        <div class="hangul-example">으 (eu)</div>
+                        <button onclick="playAudio('audio/ue.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅣ</div>
+                        <div class="hangul-sound">i</div>
+                        <div class="hangul-example">이 (i)</div>
+                        <button onclick="playAudio('audio/yi.mp3')">▶️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hangul-section">
+                <h3>Compound Vowels (복합 모음)</h3>
+                <p class="section-description">Compound vowels are sounds made by combining two or more basic vowels.</p>
+                <div class="hangul-characters">
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅐ</div>
+                        <div class="hangul-sound">ae</div>
+                        <div class="hangul-example">개 (gae)</div>
+                        <button onclick="playAudio('audio/yea.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅔ</div>
+                        <div class="hangul-sound">e</div>
+                        <div class="hangul-example">에어컨 (eokon)</div>
+                        <button onclick="playAudio('audio/ye.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅒ</div>
+                        <div class="hangul-sound">yae</div>
+                        <div class="hangul-example">얘기 (yaegi)</div>
+                        <button onclick="playAudio('audio/yeae.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ㅖ</div>
+                        <div class="hangul-sound">ye</div>
+                        <div class="hangul-example">예쁘다 (yeppeuda)</div>
+                        <button onclick="playAudio('audio/yey.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅪ</div>
+                        <div class="hangul-sound">wa</div>
+                        <div class="hangul-example">와 (wa)</div>
+                        <button onclick="playAudio('audio/wa.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅫ</div>
+                        <div class="hangul-sound">wae</div>
+                        <div class="hangul-example">왜 (wae)</div>
+                        <button onclick="playAudio('audio/yeye.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅬ</div>
+                        <div class="hangul-sound">oe</div>
+                        <div class="hangul-example">외국인 (oegugin)</div>
+                        <button onclick="playAudio('audio/yei.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅯ</div>
+                        <div class="hangul-sound">wo</div>
+                        <div class="hangul-example">원하다 (wonhada)</div>
+                        <button onclick="playAudio('audio/woe.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅰ</div>
+                        <div class="hangul-sound">we</div>
+                        <div class="hangul-example">웨딩 (weding)</div>
+                        <button onclick="playAudio('audio/wea.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅱ</div>
+                        <div class="hangul-sound">wi</div>
+                        <div class="hangul-example">위험 (wiheom)</div>
+                        <button onclick="playAudio('audio/we.mp3')">▶️</button>
+                    </div>
+                    <div class="hangul-char-card">
+                        <div class="hangul-char">ᅴ</div>
+                        <div class="hangul-sound">ui</div>
+                        <div class="hangul-example">의사 (uisa)</div>
+                        <button onclick="playAudio('audio/uee.mp3')">▶️</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hangul-tip">
+                <h4>💡 K-pop Tip!</h4>
+                <p>K-pop group names like **'EXO'** are written as '엑소' in Hangul, and **'BTS'** is '방탄소년단'. Learning Hangul will help you read and write your favorite group's names!</p>
+            </div>
+        </div>
+</section>
+        <section class="lesson-section">
+            <div class="container">
+                <h2 class="section-title">Essential Greetings (인사말)</h2>
                 
-                <div class="hangul-grid">
-                    <div class="hangul-category">
-                        <h3>Consonants (자음)</h3>
-                        <div class="hangul-characters">
-                            <div class="hangul-char-card" onclick="playAudio('../audio/g.mp3')">
-                                <span class="hangul-char">ㄱ</span>
-                                <span class="hangul-romanization">g/k</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/n.mp3')">
-                                <span class="hangul-char">ㄴ</span>
-                                <span class="hangul-romanization">n</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/d.mp3')">
-                                <span class="hangul-char">ㄷ</span>
-                                <span class="hangul-romanization">d/t</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/r.mp3')">
-                                <span class="hangul-char">ㄹ</span>
-                                <span class="hangul-romanization">r/l</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/m.mp3')">
-                                <span class="hangul-char">ㅁ</span>
-                                <span class="hangul-romanization">m</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/b.mp3')">
-                                <span class="hangul-char">ㅂ</span>
-                                <span class="hangul-romanization">b/p</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/s.mp3')">
-                                <span class="hangul-char">ㅅ</span>
-                                <span class="hangul-romanization">s</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/ng.mp3')">
-                                <span class="hangul-char">ㅇ</span>
-                                <span class="hangul-romanization">ng (silent)</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/j.mp3')">
-                                <span class="hangul-char">ㅈ</span>
-                                <span class="hangul-romanization">j</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/ch.mp3')">
-                                <span class="hangul-char">ㅊ</span>
-                                <span class="hangul-romanization">ch</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/k.mp3')">
-                                <span class="hangul-char">ㅋ</span>
-                                <span class="hangul-romanization">k</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/t.mp3')">
-                                <span class="hangul-char">ㅌ</span>
-                                <span class="hangul-romanization">t</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/p.mp3')">
-                                <span class="hangul-char">ㅍ</span>
-                                <span class="hangul-romanization">p</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/h.mp3')">
-                                <span class="hangul-char">ㅎ</span>
-                                <span class="hangul-romanization">h</span>
-                            </div>
-                        </div>
+                <div class="phrases-grid">
+                    <div class="phrase-card">
+                        <div class="phrase-korean">안녕하세요</div>
+                        <div class="phrase-romanization">annyeonghaseyo</div>
+                        <div class="phrase-english">Hello (formal)</div>
+                        <div class="phrase-usage">Use when meeting someone for the first time or in formal situations. **This is the most common and polite greeting in Korea.**</div>
                     </div>
                     
-                    <div class="hangul-category">
-                        <h3>Vowels (모음)</h3>
-                        <div class="hangul-characters">
-                            <div class="hangul-char-card" onclick="playAudio('../audio/a.mp3')">
-                                <span class="hangul-char">ㅏ</span>
-                                <span class="hangul-romanization">a</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/ya.mp3')">
-                                <span class="hangul-char">ㅑ</span>
-                                <span class="hangul-romanization">ya</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/eo.mp3')">
-                                <span class="hangul-char">ㅓ</span>
-                                <span class="hangul-romanization">eo</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/yeo.mp3')">
-                                <span class="hangul-char">ㅕ</span>
-                                <span class="hangul-romanization">yeo</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/o.mp3')">
-                                <span class="hangul-char">ㅗ</span>
-                                <span class="hangul-romanization">o</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/yo.mp3')">
-                                <span class="hangul-char">ㅛ</span>
-                                <span class="hangul-romanization">yo</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/u.mp3')">
-                                <span class="hangul-char">ㅜ</span>
-                                <span class="hangul-romanization">u</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/yu.mp3')">
-                                <span class="hangul-char">ㅠ</span>
-                                <span class="hangul-romanization">yu</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/eu.mp3')">
-                                <span class="hangul-char">ㅡ</span>
-                                <span class="hangul-romanization">eu</span>
-                            </div>
-                            <div class="hangul-char-card" onclick="playAudio('../audio/i.mp3')">
-                                <span class="hangul-char">ㅣ</span>
-                                <span class="hangul-romanization">i</span>
-                            </div>
-                        </div>
+                    <div class="phrase-card">
+                        <div class="phrase-korean">안녕</div>
+                        <div class="phrase-romanization">annyeong</div>
+                        <div class="phrase-english">Hi/Bye (casual)</div>
+                        <div class="phrase-usage">Only use with close friends or people younger than you. Using this with an older person or superior is considered rude.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">안녕히 가세요</div>
+                        <div class="phrase-romanization">annyeonghi gaseyo</div>
+                        <div class="phrase-english">Goodbye (to someone leaving)</div>
+                        <div class="phrase-usage">Literally means "go in peace." You say this when the other person is leaving but you are staying.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">안녕히 계세요</div>
+                        <div class="phrase-romanization">annyeonghi gyeseyo</div>
+                        <div class="phrase-english">Goodbye (when you're leaving)</div>
+                        <div class="phrase-usage">Literally means "stay in peace." You say this when you are leaving, but the other person is staying.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">처음 뵙겠습니다</div>
+                        <div class="phrase-romanization">cheoeum boepgetseumnida</div>
+                        <div class="phrase-english">Nice to meet you</div>
+                        <div class="phrase-usage">A very formal greeting used when meeting someone new, especially an elder or someone in a higher position.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">반갑습니다</div>
+                        <div class="phrase-romanization">bangapseumnida</div>
+                        <div class="phrase-english">Nice to meet you</div>
+                        <div class="phrase-usage">A common and polite way to express "nice to meet you" to someone you're meeting for the first time.</div>
+                    </div>
+                </div>
+                <div class="lesson-tip">
+                    <h4>🎤 Learn from K-pop Lyrics</h4>
+                    <p>The song title **"안녕"** by Joy (Red Velvet) is a great example of this casual greeting. It shows how "안녕" can be used to say "hi" or "bye" between close friends or lovers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <div class="container">
+                <h2 class="section-title">Basic Courtesy Phrases (기본 예의)</h2>
+                
+                <div class="phrases-grid">
+                    <div class="phrase-card">
+                        <div class="phrase-korean">감사합니다</div>
+                        <div class="phrase-romanization">gamsahamnida</div>
+                        <div class="phrase-english">Thank you (formal)</div>
+                        <div class="phrase-usage">This is the most polite way to say thank you. Use it in formal situations or with people you don't know well.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">고마워요</div>
+                        <div class="phrase-romanization">gomawoyo</div>
+                        <div class="phrase-english">Thank you (casual)</div>
+                        <div class="phrase-usage">A less formal way to express gratitude. Use with friends or people you are familiar with.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">죄송합니다</div>
+                        <div class="phrase-romanization">joesonghamnida</div>
+                        <div class="phrase-english">I'm sorry (formal)</div>
+                        <div class="phrase-usage">A formal apology for a mistake. Used for more serious situations or to show respect.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">미안해요</div>
+                        <div class="phrase-romanization">mianhaeyo</div>
+                        <div class="phrase-english">Sorry (casual)</div>
+                        <div class="phrase-usage">A casual apology to friends. Can be used for minor mistakes.</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">괜찮아요</div>
+                        <div class="phrase-romanization">gwaenchanayo</div>
+                        <div class="phrase-english">It's okay</div>
+                        <div class="phrase-usage">Use this to accept an apology or reassure someone. It can also be used to say "I'm okay" or "I'm fine."</div>
+                    </div>
+                    
+                    <div class="phrase-card">
+                        <div class="phrase-korean">실례합니다</div>
+                        <div class="phrase-romanization">sillyehamnida</div>
+                        <div class="phrase-english">Excuse me</div>
+                        <div class="phrase-usage">Getting someone's attention politely, or excusing yourself for a brief moment.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="lesson-section phrase-section">
+        <section class="lesson-section">
             <div class="container">
-                <h2 class="section-title">Essential Phrases</h2>
-                <div class="lesson-intro">
-                    <p>Start your conversations with these basic, must-know phrases.</p>
-                </div>
+                <h2 class="section-title">Korean Numbers (숫자)</h2>
+                <p class="section-intro">Korean has two number systems: Native Korean numbers and Sino-Korean numbers. Here are the basic native Korean numbers (1-10) which are often used for counting people, objects, and age.</p>
                 
-                <div class="phrases-grid">
-                    <div class="phrase-card">
-                        <div class="phrase-korean">안녕하세요</div>
-                        <div class="phrase-romanization">[annyeonghaseyo]</div>
-                        <div class="phrase-english">Hello / How are you?</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/annyeonghaseyo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <div class="number-digit">1</div>
+                        <div class="number-korean">하나</div>
+                        <div class="number-romanization">hana</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">2</div>
+                        <div class="number-korean">둘</div>
+                        <div class="number-romanization">dul</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">3</div>
+                        <div class="number-korean">셋</div>
+                        <div class="number-romanization">set</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">4</div>
+                        <div class="number-korean">넷</div>
+                        <div class="number-romanization">net</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">5</div>
+                        <div class="number-korean">다섯</div>
+                        <div class="number-romanization">daseot</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">6</div>
+                        <div class="number-korean">여섯</div>
+                        <div class="number-romanization">yeoseot</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">7</div>
+                        <div class="number-korean">일곱</div>
+                        <div class="number-romanization">ilgop</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">8</div>
+                        <div class="number-korean">여덟</div>
+                        <div class="number-romanization">yeodeol</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">9</div>
+                        <div class="number-korean">아홉</div>
+                        <div class="number-romanization">ahop</div>
+                    </div>
+                    <div class="number-card">
+                        <div class="number-digit">10</div>
+                        <div class="number-korean">열</div>
+                        <div class="number-romanization">yeol</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section practice-section">
+            <div class="container">
+                <h2 class="section-title">Practice What You've Learned</h2>
+                
+                <div class="practice-grid">
+                    <div class="practice-card">
+                        <h3>🧠 Take the Basics Quiz</h3>
+                        <p>Test your knowledge of Hangul, greetings, and basic phrases with our interactive quiz.</p>
+                        <a href="quiz.html?category=basic-vocab" class="btn btn-primary">Start Quiz</a>
                     </div>
                     
-                    <div class="phrase-card">
-                        <div class="phrase-korean">감사합니다</div>
-                        <div class="phrase-romanization">[gamsahamnida]</div>
-                        <div class="phrase-english">Thank you</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/gamsahamnida.mp3')" class="btn btn-primary">Play</button>
-                        </div>
+                    <div class="practice-card">
+                        <h3>📝 Practice with Phrases</h3>
+                        <p>Use our phrase generator to practice Korean phrases and expand your vocabulary.</p>
+                        <a href="phrase-generator.html" class="btn btn-secondary">Generate Phrases</a>
                     </div>
                     
-                    <div class="phrase-card">
-                        <div class="phrase-korean">죄송합니다</div>
-                        <div class="phrase-romanization">[joesonghamnida]</div>
-                        <div class="phrase-english">I'm sorry</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/joesonghamnida.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">네</div>
-                        <div class="phrase-romanization">[ne]</div>
-                        <div class="phrase-english">Yes</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/ne.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">아니요</div>
-                        <div class="phrase-romanization">[aniyo]</div>
-                        <div class="phrase-english">No</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/aniyo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">괜찮아요</div>
-                        <div class="phrase-romanization">[gwaenchanayo]</div>
-                        <div class="phrase-english">It's okay / I'm fine</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/gwaenchanayo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">이름이 뭐예요?</div>
-                        <div class="phrase-romanization">[ireumi mwoyeyo?]</div>
-                        <div class="phrase-english">What is your name?</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/ireumi_mwoyeyo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">반가워요</div>
-                        <div class="phrase-romanization">[banggawoyo]</div>
-                        <div class="phrase-english">Nice to meet you</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/banggawoyo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
-                    </div>
-                    
-                    <div class="phrase-card">
-                        <div class="phrase-korean">잘 가요</div>
-                        <div class="phrase-romanization">[jal gayo]</div>
-                        <div class="phrase-english">Goodbye (to person leaving)</div>
-                        <div class="phrase-audio">
-                            <button onclick="playAudio('../audio/jal_gayo.mp3')" class="btn btn-primary">Play</button>
-                        </div>
+                    <div class="practice-card">
+                        <h3>🎵 Learn with K-pop</h3>
+                        <p>Apply your knowledge by studying K-pop lyrics with translations and explanations.</p>
+                        <a href="lyrics.html" class="btn btn-outline">Browse Lyrics</a>
                     </div>
                 </div>
             </div>
@@ -774,24 +1198,27 @@
 
         <section class="lesson-section next-steps">
             <div class="container">
-                <h2 class="section-title">Continue Learning</h2>
+                <h2 class="section-title">What's Next?</h2>
                 <div class="next-steps-content">
-                    <p>Now that you know the basics, expand your knowledge with these steps:</p>
+                    <p>Great job learning the Korean basics! Now that you know Hangul and essential phrases, here's what you should study next:</p>
+                    
                     <div class="next-steps-grid">
                         <a href="grammar.html" class="next-step-card">
                             <div class="step-number">1</div>
                             <h3>Korean Grammar</h3>
-                            <p>Understand how to build proper sentences with particles and conjugations</p>
+                            <p>Learn sentence structure, particles, and verb conjugations</p>
                         </a>
+                        
                         <a href="vocabulary.html" class="next-step-card">
                             <div class="step-number">2</div>
-                            <h3>Korean Vocabulary</h3>
+                            <h3>Expand Vocabulary</h3>
                             <p>Build your word bank with categorized vocabulary lists</p>
                         </a>
-                        <a href="quiz.html" class="next-step-card">
+                        
+                        <a href="pronunciation.html" class="next-step-card">
                             <div class="step-number">3</div>
-                            <h3>Take a Quiz</h3>
-                            <p>Test your knowledge with a quiz on Hangul and basic phrases</p>
+                            <h3>Perfect Pronunciation</h3>
+                            <p>Master Korean sounds and pronunciation rules</p>
                         </a>
                     </div>
                 </div>
@@ -838,13 +1265,13 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         function playAudio(audioFile) {
             const audio = new Audio(audioFile);
             audio.play();
         }
-        
+
         // 모바일 햄버거 메뉴 기능 추가
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
