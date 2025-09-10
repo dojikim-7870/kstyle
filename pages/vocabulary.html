@@ -78,6 +78,26 @@
         <section class="lesson-section">
             <div class="container">
                 <div id="vocabulary-container">
+                    <div class="search-and-filter-bar">
+                        <div class="search-input-container">
+                            <input type="text" id="vocabulary-search" placeholder="Search vocabulary...">
+                        </div>
+                        <div class="filter-controls">
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="basic-greetings">Basic Greetings</option>
+                                <option value="family">Family</option>
+                                <option value="numbers">Numbers</option>
+                                <option value="food">Food & Drinks</option>
+                                <option value="k-pop">K-pop Terms</option>
+                                <option value="colors">Colors</option>
+                                <option value="time">Time</option>
+                                <option value="weather">Weather</option>
+                                <option value="emotions">Emotions</option>
+                            </select>
+                            <button id="clear-filters" class="btn btn-secondary">Clear Filters</button>
+                        </div>
+                    </div>
                     <div class="loading-state">
                         <h2>Loading Korean Vocabulary...</h2>
                         <p>Please wait while we load the vocabulary database.</p>
@@ -446,6 +466,41 @@
             margin-bottom: 1rem;
         }
         
+        .search-and-filter-bar {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input-container {
+            flex: 1;
+        }
+        
+        #vocabulary-search {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        #category-filter {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            box-shadow: var(--shadow-light);
+        }
+        
         .study-tips {
             background: white;
         }
@@ -498,6 +553,7 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: var(--shadow-light);
+            text-align: center;
             transition: var(--transition);
         }
         
@@ -661,6 +717,21 @@
         @media (max-width: 768px) {
             .page-hero h1 {
                 font-size: 2rem;
+            }
+            
+            .search-and-filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            #category-filter,
+            #clear-filters {
+                width: 100%;
             }
             
             .tips-grid {
