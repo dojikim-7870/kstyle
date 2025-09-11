@@ -618,7 +618,17 @@ section {
     .nav-toggle {
         display: flex;
     }
-    
+    /* 한글 섹션 모바일 스타일 */
+    .hangul-characters {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.75rem;
+    }
+
+    /* 문구 섹션 모바일 스타일 */
+    .phrases-grid {
+        grid-template-columns: 1fr;
+    }
+}
     .nav-menu {
         position: fixed;
         top: 80px;
