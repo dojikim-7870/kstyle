@@ -59,14 +59,17 @@ function initializeNavigation() {
 /**
  * Initialize mobile menu functionality
  */
-// 수정 후
 function initializeMobileMenu() {
     const navToggle = document.querySelector('.nav-toggle');
+    // Ensure you target both the <nav> and <ul> with the class `nav-menu`
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
     
-    // 이 부분이 가장 중요합니다. 요소가 없으면 함수를 종료합니다.
-    if (!navToggle || !navMenu) return; 
+    // Important: Exit if elements are not found to prevent errors
+    if (!navToggle || !navMenu) {
+        console.warn('Mobile menu elements not found. Hamburger menu will not function.');
+        return;
+    }
 
     navToggle.addEventListener('click', () => {
         const isActive = navMenu.classList.contains('active');
@@ -78,7 +81,7 @@ function initializeMobileMenu() {
         }
     });
     
-    // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+    // Close mobile menu when a link inside is clicked
     const navLinks = navMenu.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -86,14 +89,14 @@ function initializeMobileMenu() {
         });
     });
     
-    // 메뉴 외부 클릭 시 메뉴 닫기
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             closeMobileMenu();
         }
     });
 
-    // ESC 키를 눌렀을 때 메뉴 닫기
+    // Close menu with ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             closeMobileMenu();
@@ -102,14 +105,14 @@ function initializeMobileMenu() {
     
     function openMobileMenu() {
         navMenu.classList.add('active');
-        navToggle.classList.add('active'); // 햄버거 아이콘 변화를 위한 클래스
+        navToggle.classList.add('active');
         body.style.overflow = 'hidden';
         navToggle.setAttribute('aria-expanded', 'true');
     }
     
     function closeMobileMenu() {
         navMenu.classList.remove('active');
-        navToggle.classList.remove('active'); // 햄버거 아이콘 변화를 위한 클래스
+        navToggle.classList.remove('active');
         body.style.overflow = '';
         navToggle.setAttribute('aria-expanded', 'false');
     }
