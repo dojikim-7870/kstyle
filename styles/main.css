@@ -562,8 +562,7 @@ section {
     margin-bottom: 2rem;
 }
 
-.footer-section h3,
-.footer-section h4 {
+.footer-section h3, .footer-section h4 {
     margin-bottom: 1rem;
     color: white;
 }
@@ -589,146 +588,366 @@ section {
 .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
 .social-links a {
-    font-size: 1.5rem;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
 }
 
 .social-links a:hover {
-    transform: scale(1.2);
+    background: var(--primary-color);
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.25rem;
 }
 
 .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #444;
     color: #bbb;
+    font-size: 0.9rem;
 }
 
-.nav-menu {
-    display: flex; /* 데스크톱 기본값 */
-    gap: 2rem; /* 데스크톱 기본값 */
-    align-items: center; /* 데스크톱 기본값 */
+/* Page-specific styles (for pages like basics.html) */
+.page-hero {
+    background: var(--gradient-primary);
+    padding: 100px 0 60px;
+    margin-top: 60px;
+    color: white;
 }
-/* Responsive Design */
+
+.page-hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.page-breadcrumb a {
+    color: #ffe66d;
+    font-weight: 500;
+}
+
+.page-breadcrumb span {
+    color: rgba(255,255,255,0.8);
+}
+
+.lesson-section {
+    background: #f7f9fc;
+}
+
+.lesson-intro p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.hangul-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.hangul-section h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.hangul-characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.hangul-char-card {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.hangul-char-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.hangul-char {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.hangul-sound {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.hangul-example {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+/* Phrases & Numbers section */
+.phrases {
+    background: white;
+}
+
+.phrases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.phrase-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.phrase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.phrase-korean {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.phrase-english {
+    color: #666;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.number-card {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.number-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.number-korean {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.number-sino {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.number-native {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Practice and Next Steps Section */
+.practice-section {
+    background: #f7f9fc;
+}
+
+.practice-grid, .next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.practice-card, .next-step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.practice-card:hover, .next-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.next-step-card h3 {
+    margin-bottom: 1rem;
+}
+
+.next-step-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* Mobile responsive styles */
 @media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-    /* 한글 섹션 모바일 스타일 */
-    .hangul-characters {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 0.75rem;
-    }
-
-    /* 문구 섹션 모바일 스타일 */
-    .phrases-grid {
-        grid-template-columns: 1fr;
-    }
-}
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        gap: 0;
-        padding: 1rem 0;
-        box-shadow: var(--shadow-medium);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .nav-link {
-        padding: 1rem 2rem;
-        border-bottom: 1px solid #eee;
-    }
-    
-    .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: #f8f9fa;
-        margin-top: 0.5rem;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .korean-text-animation {
-        font-size: 3rem;
-    }
-
-    .hero-visual {
-        display: none; /* Hide visual on smaller screens to save space */
-    }
-    
-    .features-grid,
-    .quick-access-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .path-step {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
     .container {
         padding: 0 15px;
     }
     
-    .hero {
-        padding: 40px 0;
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        cursor: pointer;
     }
     
-    .hero-title {
-        font-size: 2rem;
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--dark-color);
+        margin: 5px 0;
+        transition: var(--transition);
     }
     
-    .korean-text-animation {
-        font-size: 2rem; /* Adjusted for even smaller screens */
+    .nav-toggle.toggle-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
     
-    .hero-buttons {
+    .nav-toggle.toggle-active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.toggle-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: var(--shadow-light);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        height: calc(100vh - 60px);
+        padding-top: 2rem;
+    }
+    
+    .nav-menu.nav-menu-active {
+        transform: translateX(0);
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 1rem;
+        display: block;
+    }
+    
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 1rem;
+        display: none;
+    }
+    
+    .nav-dropdown:hover .dropdown-menu {
+        display: none; /* 모바일에서는 hover 비활성화 */
+    }
+    
+    .nav-dropdown > .nav-link {
+        display: flex;
         justify-content: center;
+        align-items: center;
     }
     
-    section {
-        padding: 40px 0;
+    .nav-dropdown .dropdown-arrow {
+        display: none;
     }
     
-    .feature-card,
-    .quick-card {
+    .page-hero {
+        padding: 80px 0 40px;
+        margin-top: 60px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hangul-characters {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .hangul-char {
+        font-size: 1.5rem;
+    }
+    
+    .phrases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .phrase-card {
         padding: 1.5rem;
+    }
+    
+    .phrase-korean {
+        font-size: 1.3rem;
+    }
+    
+    .numbers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+    
+    .practice-grid, .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 2rem;
     }
 }
 
@@ -756,452 +975,14 @@ select:focus {
     position: absolute;
     top: -40px;
     left: 6px;
+    padding: 8px;
     background: var(--dark-color);
     color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 9999;
+    border-radius: 0 0 4px 4px;
+    transition: var(--transition);
+    z-index: 10000;
 }
 
 .skip-link:focus {
-    top: 6px;
+    top: 0;
 }
-
-/* Print styles */
-@media print {
-    .header,
-    .footer,
-    .nav,
-    .btn {
-        display: none !important;
-    }
-    
-    .main {
-        margin-top: 0 !important;
-    }
-    
-    * {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-    }
-}
-<style>
-        .page-hero {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 100px 0 60px;
-            margin-top: 80px;
-        }
-        
-        .page-hero-content {
-            text-align: center;
-        }
-        
-        .page-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .page-breadcrumb {
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-        
-        .page-breadcrumb a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .lesson-section {
-            padding: 60px 0;
-        }
-        
-        .lesson-section:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .lesson-intro, .section-description {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .hangul-grid {
-            display: grid;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .hangul-section h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .hangul-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hangul-char-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .hangul-char-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .hangul-char {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .hangul-sound {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.25rem;
-        }
-        
-        .hangul-example {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-        }
-        
-        .hangul-char-card button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        
-        .hangul-tip {
-            background: var(--gradient-secondary);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-            text-align: center;
-        }
-        
-        .hangul-tip h4 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-        
-        .phrases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .phrase-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .phrase-korean {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .phrase-romanization {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .phrase-english {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-        
-        .phrase-usage {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-        }
-        
-        .numbers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .number-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-        }
-        
-        .number-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .number-digit {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .number-korean {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-        
-        .number-romanization {
-            font-style: italic;
-            color: #666;
-        }
-        
-        .lesson-tip {
-            background: var(--gradient-secondary);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-            text-align: center;
-        }
-        
-        .lesson-tip h4 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-        
-        .practice-section {
-            background: var(--light-color);
-        }
-        
-        .practice-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .practice-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .next-steps {
-            background: white;
-        }
-        
-        .next-steps-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .next-steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .next-step-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .next-step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-        
-        /* 추가 및 수정된 모바일 최적화 CSS */
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: 80px 0 40px;
-                margin-top: 60px;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            /* 햄버거 메뉴를 위한 스타일 */
-            .nav-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                cursor: pointer;
-            }
-
-            .nav-toggle span {
-                display: block;
-                width: 25px;
-                height: 3px;
-                background-color: var(--dark-color);
-                margin: 5px 0;
-                transition: var(--transition);
-            }
-            
-            .nav-toggle.toggle-active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            
-            .nav-toggle.toggle-active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .nav-toggle.toggle-active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-            
-            .nav-menu {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: var(--shadow-light);
-                flex-direction: column;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in-out;
-                z-index: 999;
-                height: calc(100vh - 60px);
-                padding-top: 2rem;
-            }
-            
-            .nav-menu.nav-menu-active {
-                transform: translateX(0);
-            }
-            
-            .nav-menu li {
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .nav-menu li:last-child {
-                border-bottom: none;
-            }
-            
-            .nav-link {
-                padding: 1rem;
-                display: block;
-            }
-            
-            .nav-dropdown .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                border: none;
-                padding-left: 1rem;
-                display: none;
-            }
-            
-            .nav-dropdown:hover .dropdown-menu {
-                display: none; /* 모바일에서는 hover 비활성화 */
-            }
-            
-            .nav-dropdown > .nav-link {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .nav-dropdown .dropdown-arrow {
-                display: none;
-            }
-            
-            .hangul-characters {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-                gap: 0.75rem;
-            }
-            
-            .hangul-char {
-                font-size: 1.5rem;
-            }
-            
-            .phrases-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .phrase-card {
-                padding: 1.5rem;
-            }
-            
-            .phrase-korean {
-                font-size: 1.3rem;
-            }
-            
-            .numbers-grid {
-                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-            }
-            
-            .practice-grid, .next-steps-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-section {
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
