@@ -621,7 +621,7 @@ section {
     
     .nav-menu {
         position: fixed;
-        top: 100%;
+        top: 80px;
         left: 0;
         right: 0;
         background: white;
