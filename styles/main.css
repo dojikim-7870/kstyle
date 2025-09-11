@@ -608,6 +608,11 @@ section {
     color: #bbb;
 }
 
+.nav-menu {
+    display: flex; /* 데스크톱 기본값 */
+    gap: 2rem; /* 데스크톱 기본값 */
+    align-items: center; /* 데스크톱 기본값 */
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-toggle {
