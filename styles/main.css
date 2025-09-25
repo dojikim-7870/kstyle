@@ -902,7 +902,11 @@ section {
         align-items: center;
     }
     
-   
+   /* 모바일에서 드롭다운 메뉴를 보이게 하는 규칙 */
+    .dropdown-menu.active {
+        max-height: 500px; /* 충분히 큰 값으로 변경해 메뉴가 보이도록 함 */
+        overflow: visible; /* 넘치는 내용도 보이도록 설정 */
+    }
     
     .page-hero {
         padding: 80px 0 40px;
