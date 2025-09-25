@@ -891,6 +891,10 @@ section {
         transition: max-height 0.3s ease-in-out;
     }
     
+/* 아래 코드 블록을 추가하세요. */
+.nav-dropdown .dropdown-menu.active {
+    max-height: 500px; /* 충분히 큰 값으로 설정 */
+}
     .nav-dropdown:hover .dropdown-menu {
         display: none; /* 모바일에서는 hover 비활성화 */
     }
