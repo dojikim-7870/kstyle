@@ -886,7 +886,9 @@ section {
         box-shadow: none;
         border: none;
         padding-left: 1rem;
-        display: none;
+         max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
     }
     
     .nav-dropdown:hover .dropdown-menu {
