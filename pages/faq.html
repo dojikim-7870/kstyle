@@ -63,32 +63,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 </style>
 <style>
-/* FAQ 컨테이너 기본 카드 영역 */
-.faq-container {
+/* 카드 섹션 */
+.faq-card {
     max-width: 900px;
     margin: 40px auto;
     background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
-/* 섹션 간 간격 줄이기 */
+/* 각 FAQ */
 .faq-section {
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* FAQ 간격 줄임 (한 줄 띄우기 수준) */
 }
 
+/* FAQ 제목 */
 .faq-section h2 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 1.35rem;
+    color: #333;
 }
 
+/* FAQ 문단 */
 .faq-section p {
-    line-height: 1.6;
     margin: 0;
+    line-height: 1.55;
+    color: #555;
 }
 </style>
-
 
 </head>
 <body>
@@ -133,102 +136,98 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </nav>
     </header>
     <!-- MAIN CONTENT -->
-   <section class="page-hero">
-            <div class="container">
-                <div class="page-hero-content">
-                    <h1>FAQ K-Style Learning</h1>
-                    <p>Learn Korean with the power of K-pop culture — simple, fun, and interactive.</p>
-                    <div class="page-breadcrumb">
-                        <a href="../index.html">Home</a> > <span>K-style  FAQ</span>
-                    </div>
+   <main>
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>FAQ K-Style Learning</h1>
+                <p>Learn Korean with the power of K-pop culture — simple, fun, and interactive.</p>
+                <div class="page-breadcrumb">
+                    <a href="../index.html">Home</a> > <span>K-style FAQ</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-         <div class="faq-container">
+    <!-- FAQ CARD SECTION -->
+    <section class="faq-card">
         
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>1. What is this website about?</h2>
             <p>
-                Our website provides a collection of easy-to-use online tools designed to help you complete everyday tasks more efficiently. 
+                Our website provides a collection of easy-to-use online tools designed to help you complete everyday tasks more efficiently.
                 Whether you need to calculate, convert, edit images, or generate text, our platform offers a variety of solutions in one place.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>2. Are the tools free to use?</h2>
             <p>
                 Yes! All tools on our website are completely free for personal and commercial use. 
                 We support the site through display ads, allowing us to keep everything accessible at no cost to users.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>3. Do I need to create an account?</h2>
             <p>
-                No registration or login is required. 
-                Our tools are built for instant use—open the page and start using the tool right away, without any setup.
+                No registration or login is required. You can start using any tool instantly.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>4. Are my files safe?</h2>
             <p>
-                Absolutely. Uploaded files are processed locally in your browser whenever possible. 
-                For tools that require temporary uploads, files are automatically deleted shortly after processing and are never stored permanently.
+                Uploaded files are processed locally in your browser whenever possible. 
+                When temporary uploads are required, your files are deleted automatically after processing.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>5. Why are there ads on the site?</h2>
             <p>
-                Ads allow us to offer all tools for free while maintaining hosting, development, and infrastructure costs. 
-                We ensure that ads remain minimal and do not interfere with usability.
+                Ads help us maintain hosting, development, and operational costs while providing free access to tools.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
-            <h2>6. Can I report an issue or request a new feature?</h2>
+        <div class="faq-section">
+            <h2>6. Can I request a new feature?</h2>
             <p>
-                Yes! If you encounter a problem or want us to add a new tool, please contact us through the 
-                <a href="/pages/contact.html">Contact Page</a>. Your suggestions help us improve the platform.
+                Absolutely! Contact us anytime via the <a href="/pages/contact.html">Contact Page</a>.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>7. Do you store personal information?</h2>
             <p>
-                We do not collect personal information from users. 
-                Basic anonymous analytics may be used to understand general usage trends, but no identifiable data is ever collected or stored.
+                We do not collect personal data. Only anonymous usage analytics may be used to improve the website.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
+        <div class="faq-section">
             <h2>8. Which browsers are supported?</h2>
             <p>
-                Our tools work best on modern browsers such as Chrome, Edge, Firefox, and Safari. 
-                Older browsers may not fully support some advanced functions.
+                Our site works best on Chrome, Edge, Firefox, and Safari.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
-            <h2>9. Can I share your tools on my website or blog?</h2>
+        <div class="faq-section">
+            <h2>9. Can I share your tools on my website?</h2>
             <p>
-                Yes, you are welcome to link to any tool or page. 
-                However, redistributing or embedding our tools without permission is not allowed.
+                You may link to our tools freely, but embedding or redistributing the tools is not allowed.
             </p>
-        </section>
+        </div>
 
-        <section class="faq-section">
-            <h2>10. How can I stay updated on new tools?</h2>
+        <div class="faq-section">
+            <h2>10. How can I stay updated?</h2>
             <p>
-                We regularly add new tools and improve existing ones. 
-                You can bookmark the website or check the homepage for updates.
+                We regularly add new tools. Check back on the homepage anytime.
             </p>
-        </section>
+        </div>
 
-    </div>
-    </main>
+    </section>
+</main>
+
 
     <footer class="footer">
         <div class="container">
@@ -282,4 +281,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 
 </html>
-
